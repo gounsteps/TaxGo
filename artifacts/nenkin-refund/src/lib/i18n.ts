@@ -254,9 +254,9 @@ export const translations: TranslationStore = {
     "nav.apply": "Apply Now",
 
     // Hero
-    "hero.hook": "Foreigners who worked in Japan: You can get your pension back.",
-    "hero.quote": "",
-    "hero.sub": "Claim your lump-sum withdrawal payment (often over 1M yen) and get a full income tax refund. Leave the complex paperwork to our experts.",
+    "hero.hook": "Complex Japan Pension Refunds: Trusted by Many.",
+    "hero.quote": "Leave your Lump-sum Withdrawal and Income Tax refund to our proven track record.",
+    "hero.sub": "Claiming the 20.42% income tax withheld from your pension is a complex process that legally requires a local \"Tax Agent\" in Japan. With our extensive experience in handling numerous successful cases, we provide a fast and precise service to ensure you recover every single yen. We don't let a single yen slip away.",
     "hero.cta": "Apply Now",
 
     // What is it
