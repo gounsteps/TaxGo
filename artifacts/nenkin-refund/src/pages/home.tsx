@@ -200,41 +200,75 @@ export default function Home() {
       {/* Process Timeline */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="max-w-2xl mx-auto"
+            className="max-w-5xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-center text-slate-900 mb-16">{t("process.title")}</motion.h2>
-            <div className="flex flex-col gap-0">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((step, index) => (
-                <motion.div 
-                  key={step}
-                  variants={fadeInUp}
-                  className="flex gap-5 items-stretch"
-                >
-                  {/* Left: number + line */}
-                  <div className="flex flex-col items-center">
-                    <div className="flex items-center justify-center w-11 h-11 rounded-full bg-primary text-white font-bold text-base shrink-0 shadow-md">
-                      {step}
-                    </div>
-                    {index < 7 && (
-                      <div className="w-0.5 flex-1 bg-primary/20 my-2" />
-                    )}
-                  </div>
-                  {/* Right: content */}
-                  <div className={`flex-1 ${index < 7 ? "pb-8" : "pb-0"}`}>
-                    <Card className="border border-slate-100 shadow-sm">
-                      <CardContent className="p-5">
-                        <h3 className="font-bold text-base text-slate-900 mb-1">{t(`process.${step}.title`)}</h3>
-                        <p className="text-sm text-slate-500">{t(`process.${step}.desc`)}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </motion.div>
-              ))}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+              {/* Left column: Steps 1-2 (Applicant) */}
+              <motion.div variants={fadeInUp}>
+                <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 bg-slate-200 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-slate-500" />
+                  <span className="text-sm font-semibold text-slate-700">{t("process.applicant.label")}</span>
+                </div>
+                <div className="flex flex-col gap-0">
+                  {[1, 2].map((step, index) => (
+                    <motion.div key={step} variants={fadeInUp} className="flex gap-4 items-stretch">
+                      <div className="flex flex-col items-center">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-500 text-white font-bold text-sm shrink-0 shadow-md">
+                          {step}
+                        </div>
+                        {index < 1 && (
+                          <div className="w-0.5 flex-1 bg-slate-300 my-2" />
+                        )}
+                      </div>
+                      <div className={`flex-1 ${index < 1 ? "pb-6" : "pb-0"}`}>
+                        <Card className="border border-slate-200 shadow-sm">
+                          <CardContent className="p-4">
+                            <h3 className="font-bold text-sm text-slate-800 mb-1">{t(`process.${step}.title`)}</h3>
+                            <p className="text-xs text-slate-500">{t(`process.${step}.desc`)}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Right column: Steps 3-8 (TaxGo) */}
+              <motion.div variants={fadeInUp}>
+                <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 bg-primary/10 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-primary" />
+                  <span className="text-sm font-semibold text-primary">{t("process.taxgo.label")}</span>
+                </div>
+                <div className="flex flex-col gap-0">
+                  {[3, 4, 5, 6, 7, 8].map((step, index) => (
+                    <motion.div key={step} variants={fadeInUp} className="flex gap-4 items-stretch">
+                      <div className="flex flex-col items-center">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-sm shrink-0 shadow-md">
+                          {step}
+                        </div>
+                        {index < 5 && (
+                          <div className="w-0.5 flex-1 bg-primary/20 my-2" />
+                        )}
+                      </div>
+                      <div className={`flex-1 ${index < 5 ? "pb-6" : "pb-0"}`}>
+                        <Card className="border border-slate-100 shadow-sm">
+                          <CardContent className="p-4">
+                            <h3 className="font-bold text-sm text-slate-900 mb-1">{t(`process.${step}.title`)}</h3>
+                            <p className="text-xs text-slate-500">{t(`process.${step}.desc`)}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
