@@ -10,7 +10,7 @@ export const translations: TranslationStore = {
   ko: {
     // SEO
     "seo.home.title": "일본 탈퇴일시금·소득세 환급 대행 | TaxGo",
-    "seo.home.description": "일본에서 근무 후 귀국한 외국인의 후생연금 탈퇴일시금신청 및 소득세(20.42%) 환급을 대행합니다. 납세관리인 대행까지 원스톱 서비스. 출국 후 2년 이내 신청 필수.",
+    "seo.home.description": "일본 후생연금 탈퇴일시금 신청 및 소득세(20.42%) 환급 대행. 납세관리인 대행까지 원스톱 서비스.",
     "seo.home.keywords": "탈퇴일시금, 탈퇴일시금 대행, 일본 연금 환급, 소득세 환급, 납세관리인, 일본 연금 탈퇴, 환급 대행, TaxGo, 脱退一時金, 所得税還付",
     "seo.faq.title": "자주 묻는 질문 | 탈퇴일시금·소득세 환급 대행 TaxGo",
     "seo.faq.description": "탈퇴일시금 신청 기간, 수령 금액, 소득세 환급, 납세관리인 선임 등 자주 묻는 질문을 확인하세요. 일본 귀국 후 2년 이내 신청 가능.",
