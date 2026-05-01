@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 import { t, getLanguage, subscribeLanguage, Language } from "@/lib/i18n";
 import { useEffect, useState } from "react";
@@ -6,7 +5,7 @@ import { motion } from "framer-motion";
 import { Calculator } from "@/components/calculator";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, ChevronRight, FileText, Banknote, Briefcase, Clock, Globe2, Building2, ArrowRight, ArrowDown } from "lucide-react";
+import { CheckCircle2, ChevronRight, FileText, Banknote, Briefcase, Clock, Globe2, Building2 } from "lucide-react";
 
 export default function Home() {
   const [lang, setLang] = useState<Language>(getLanguage());
@@ -210,119 +209,65 @@ export default function Home() {
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-center text-slate-900 mb-16">{t("process.title")}</motion.h2>
 
-            {/* Desktop: 3-column center-circle layout */}
-            <div className="hidden md:grid grid-cols-[1fr_56px_1fr]">
-
-              {/* Badge row */}
-              <motion.div variants={fadeInUp} className="flex justify-end pr-5 pb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-200 rounded-full">
-                  <span className="w-2 h-2 rounded-full bg-slate-500" />
-                  <span className="text-sm font-semibold text-slate-700">{t("process.applicant.label")}</span>
-                </div>
-              </motion.div>
-              <div />
-              <motion.div variants={fadeInUp} className="flex justify-start pl-5 pb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full">
-                  <span className="w-2 h-2 rounded-full bg-primary" />
-                  <span className="text-sm font-semibold text-primary">{t("process.taxgo.label")}</span>
-                </div>
-              </motion.div>
-
-              {/* Steps 1–2: card LEFT, circle CENTER, empty RIGHT */}
-              {([1, 2] as const).map((step, index) => (
-                <React.Fragment key={step}>
-                  <motion.div variants={fadeInUp} className={`flex justify-end pr-5 ${index < 1 ? "pb-6" : "pb-0"}`}>
-                    <Card className="w-full border border-slate-200 shadow-sm">
-                      <CardContent className="p-4 text-right">
-                        <h3 className="font-bold text-sm text-slate-800 mb-1">{t(`process.${step}.title`)}</h3>
-                        <p className="text-xs text-slate-500">{t(`process.${step}.desc`)}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                  <motion.div variants={fadeInUp} className="flex flex-col items-center">
-                    <div className={`flex items-center justify-center w-10 h-10 rounded-full text-white font-bold text-sm shrink-0 shadow-md z-10 ${step <= 2 ? "bg-slate-500" : "bg-primary"}`}>
-                      {step}
-                    </div>
-                    {/* line always continues downward for steps 1 and 2 */}
-                    <div className={`w-0.5 flex-1 my-2 ${index < 1 ? "bg-slate-300" : "bg-gradient-to-b from-slate-400 to-primary"}`} />
-                  </motion.div>
-                  <div />
-                </React.Fragment>
-              ))}
-
-              {/* Steps 3–8: empty LEFT, circle CENTER, card RIGHT */}
-              {([3, 4, 5, 6, 7, 8] as const).map((step, index) => (
-                <React.Fragment key={step}>
-                  <div />
-                  <motion.div variants={fadeInUp} className="flex flex-col items-center">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-sm shrink-0 shadow-md z-10">
-                      {step}
-                    </div>
-                    {index < 5 && (
-                      <div className="w-0.5 flex-1 bg-primary/30 my-2" />
-                    )}
-                  </motion.div>
-                  <motion.div variants={fadeInUp} className={`flex justify-start pl-5 ${index < 5 ? "pb-6" : "pb-0"}`}>
-                    <Card className="w-full border border-slate-100 shadow-sm">
-                      <CardContent className="p-4">
-                        <h3 className="font-bold text-sm text-slate-900 mb-1">{t(`process.${step}.title`)}</h3>
-                        <p className="text-xs text-slate-500">{t(`process.${step}.desc`)}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </React.Fragment>
-              ))}
-            </div>
-
-            {/* Mobile: single vertical timeline with section labels */}
-            <div className="md:hidden flex flex-col gap-0">
-              <motion.div variants={fadeInUp} className="mb-4">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-200 rounded-full mb-4">
-                  <span className="w-2 h-2 rounded-full bg-slate-500" />
-                  <span className="text-sm font-semibold text-slate-700">{t("process.applicant.label")}</span>
-                </div>
-                {([1, 2] as const).map((step, index) => (
-                  <div key={step} className="flex gap-4 items-stretch">
-                    <div className="flex flex-col items-center">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-500 text-white font-bold text-sm shrink-0 shadow-md">
-                        {step}
-                      </div>
-                      <div className={`w-0.5 flex-1 my-2 ${index < 1 ? "bg-slate-300" : "bg-gradient-to-b from-slate-400 to-primary"}`} />
-                    </div>
-                    <div className="flex-1 pb-6">
-                      <Card className="border border-slate-200 shadow-sm">
-                        <CardContent className="p-4">
-                          <h3 className="font-bold text-sm text-slate-800 mb-1">{t(`process.${step}.title`)}</h3>
-                          <p className="text-xs text-slate-500">{t(`process.${step}.desc`)}</p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+              {/* Left column: Steps 1-2 (Applicant) */}
               <motion.div variants={fadeInUp}>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 rounded-full mb-4">
+                <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 bg-slate-200 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-slate-500" />
+                  <span className="text-sm font-semibold text-slate-700">{t("process.applicant.label")}</span>
+                </div>
+                <div className="flex flex-col gap-0">
+                  {[1, 2].map((step, index) => (
+                    <motion.div key={step} variants={fadeInUp} className="flex gap-4 items-stretch">
+                      <div className="flex flex-col items-center">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-500 text-white font-bold text-sm shrink-0 shadow-md">
+                          {step}
+                        </div>
+                        {index < 1 && (
+                          <div className="w-0.5 flex-1 bg-slate-300 my-2" />
+                        )}
+                      </div>
+                      <div className={`flex-1 ${index < 1 ? "pb-6" : "pb-0"}`}>
+                        <Card className="border border-slate-200 shadow-sm">
+                          <CardContent className="p-4">
+                            <h3 className="font-bold text-sm text-slate-800 mb-1">{t(`process.${step}.title`)}</h3>
+                            <p className="text-xs text-slate-500">{t(`process.${step}.desc`)}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Right column: Steps 3-8 (TaxGo) */}
+              <motion.div variants={fadeInUp}>
+                <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 bg-primary/10 rounded-full">
                   <span className="w-2 h-2 rounded-full bg-primary" />
                   <span className="text-sm font-semibold text-primary">{t("process.taxgo.label")}</span>
                 </div>
-                {([3, 4, 5, 6, 7, 8] as const).map((step, index) => (
-                  <div key={step} className="flex gap-4 items-stretch">
-                    <div className="flex flex-col items-center">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-sm shrink-0 shadow-md">
-                        {step}
+                <div className="flex flex-col gap-0">
+                  {[3, 4, 5, 6, 7, 8].map((step, index) => (
+                    <motion.div key={step} variants={fadeInUp} className="flex gap-4 items-stretch">
+                      <div className="flex flex-col items-center">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-sm shrink-0 shadow-md">
+                          {step}
+                        </div>
+                        {index < 5 && (
+                          <div className="w-0.5 flex-1 bg-primary/20 my-2" />
+                        )}
                       </div>
-                      {index < 5 && <div className="w-0.5 flex-1 bg-primary/20 my-2" />}
-                    </div>
-                    <div className={`flex-1 ${index < 5 ? "pb-6" : "pb-0"}`}>
-                      <Card className="border border-slate-100 shadow-sm">
-                        <CardContent className="p-4">
-                          <h3 className="font-bold text-sm text-slate-900 mb-1">{t(`process.${step}.title`)}</h3>
-                          <p className="text-xs text-slate-500">{t(`process.${step}.desc`)}</p>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </div>
-                ))}
+                      <div className={`flex-1 ${index < 5 ? "pb-6" : "pb-0"}`}>
+                        <Card className="border border-slate-100 shadow-sm">
+                          <CardContent className="p-4">
+                            <h3 className="font-bold text-sm text-slate-900 mb-1">{t(`process.${step}.title`)}</h3>
+                            <p className="text-xs text-slate-500">{t(`process.${step}.desc`)}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </motion.div>
             </div>
           </motion.div>
