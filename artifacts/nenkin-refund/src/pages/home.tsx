@@ -191,29 +191,34 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="max-w-4xl mx-auto"
+            className="max-w-2xl mx-auto"
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-center text-slate-900 mb-16">{t("process.title")}</motion.h2>
-            <div className="relative">
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 -translate-x-1/2" />
+            <div className="flex flex-col gap-0">
               {[1, 2, 3, 4, 5].map((step, index) => (
                 <motion.div 
-                  key={step} 
+                  key={step}
                   variants={fadeInUp}
-                  className={`relative flex items-center justify-between md:justify-normal w-full mb-12 last:mb-0 ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  }`}
+                  className="flex gap-5 items-stretch"
                 >
-                  <div className="hidden md:block w-5/12" />
-                  <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white font-bold shrink-0 shadow-lg ring-4 ring-slate-50 md:absolute md:left-1/2 md:-translate-x-1/2">
-                    {step}
+                  {/* Left: number + line */}
+                  <div className="flex flex-col items-center">
+                    <div className="flex items-center justify-center w-11 h-11 rounded-full bg-primary text-white font-bold text-base shrink-0 shadow-md">
+                      {step}
+                    </div>
+                    {index < 4 && (
+                      <div className="w-0.5 flex-1 bg-primary/20 my-2" />
+                    )}
                   </div>
-                  <Card className="w-[calc(100%-4rem)] md:w-5/12 border-none shadow-sm">
-                    <CardContent className="p-6">
-                      <h3 className="font-bold text-lg text-slate-900 mb-2">{t(`process.${step}.title`)}</h3>
-                      <p className="text-slate-600">{t(`process.${step}.desc`)}</p>
-                    </CardContent>
-                  </Card>
+                  {/* Right: content */}
+                  <div className={`flex-1 ${index < 4 ? "pb-8" : "pb-0"}`}>
+                    <Card className="border border-slate-100 shadow-sm">
+                      <CardContent className="p-5">
+                        <h3 className="font-bold text-base text-slate-900 mb-1">{t(`process.${step}.title`)}</h3>
+                        <p className="text-sm text-slate-500">{t(`process.${step}.desc`)}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </motion.div>
               ))}
             </div>

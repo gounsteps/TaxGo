@@ -67,8 +67,8 @@ export const translations: TranslationStore = {
 
     // Process
     "process.title": "진행 절차",
-    "process.1.title": "상담 신청",
-    "process.1.desc": "카카오톡 또는 이메일 상담",
+    "process.1.title": "구글폼 신청",
+    "process.1.desc": "구글폼으로 신청서를 작성해 주세요",
     "process.2.title": "서류 준비",
     "process.2.desc": "안내에 따라 필요한 서류 준비",
     "process.3.title": "서류 제출",
@@ -180,8 +180,8 @@ export const translations: TranslationStore = {
 
     // Process
     "process.title": "進行手順",
-    "process.1.title": "相談申込",
-    "process.1.desc": "カカオトークまたはメール相談",
+    "process.1.title": "Googleフォームで申込",
+    "process.1.desc": "Googleフォームにて申込書をご記入ください",
     "process.2.title": "書類準備",
     "process.2.desc": "案内に従い必要な書類を準備",
     "process.3.title": "書類提出",
@@ -293,8 +293,8 @@ export const translations: TranslationStore = {
 
     // Process
     "process.title": "Process Timeline",
-    "process.1.title": "Apply for Consultation",
-    "process.1.desc": "Contact us via KakaoTalk or Email",
+    "process.1.title": "Submit Google Form",
+    "process.1.desc": "Fill out and submit the application via Google Form",
     "process.2.title": "Prepare Documents",
     "process.2.desc": "Gather requested documents",
     "process.3.title": "Submit Documents",
