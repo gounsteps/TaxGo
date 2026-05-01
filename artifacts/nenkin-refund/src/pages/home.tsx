@@ -238,6 +238,19 @@ export default function Home() {
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Desktop: 3 → badge pointing right */}
+                <motion.div variants={fadeInUp} className="hidden md:flex justify-end mt-5">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-primary border border-primary/30 rounded-full px-3 py-1.5 bg-primary/5">
+                    <span>3</span>
+                    <ArrowRight size={12} />
+                  </div>
+                </motion.div>
+
+                {/* Mobile: down arrow */}
+                <motion.div variants={fadeInUp} className="md:hidden flex justify-center mt-5">
+                  <ArrowDown size={20} className="text-slate-400" />
+                </motion.div>
               </motion.div>
 
               {/* Right column: Steps 3-8 (TaxGo) */}
