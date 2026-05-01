@@ -209,7 +209,7 @@ export default function Home() {
           >
             <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-center text-slate-900 mb-16">{t("process.title")}</motion.h2>
             <div className="flex flex-col gap-0">
-              {[1, 2, 3, 4, 5].map((step, index) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((step, index) => (
                 <motion.div 
                   key={step}
                   variants={fadeInUp}
@@ -220,12 +220,12 @@ export default function Home() {
                     <div className="flex items-center justify-center w-11 h-11 rounded-full bg-primary text-white font-bold text-base shrink-0 shadow-md">
                       {step}
                     </div>
-                    {index < 4 && (
+                    {index < 7 && (
                       <div className="w-0.5 flex-1 bg-primary/20 my-2" />
                     )}
                   </div>
                   {/* Right: content */}
-                  <div className={`flex-1 ${index < 4 ? "pb-8" : "pb-0"}`}>
+                  <div className={`flex-1 ${index < 7 ? "pb-8" : "pb-0"}`}>
                     <Card className="border border-slate-100 shadow-sm">
                       <CardContent className="p-5">
                         <h3 className="font-bold text-base text-slate-900 mb-1">{t(`process.${step}.title`)}</h3>
