@@ -16,9 +16,9 @@ export function Footer() {
       case "ko":
         return { href: "https://blog.naver.com/nouzeidaikou", label: t("footer.blog"), isLink: true };
       case "ja":
-        return { href: null, label: t("footer.blog.coming"), isLink: false };
+        return { href: "https://note.com/texgo", label: t("footer.blog"), isLink: true };
       case "en":
-        return { href: null, label: t("footer.blog.coming"), isLink: false };
+        return { href: "https://note.com/texgo", label: t("footer.blog"), isLink: true };
       default:
         return { href: "https://blog.naver.com/nouzeidaikou", label: t("footer.blog"), isLink: true };
     }
