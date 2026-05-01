@@ -2,8 +2,35 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { t, setLanguage, getLanguage, Language, subscribeLanguage } from "@/lib/i18n";
 import { useEffect, useState } from "react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Menu, X } from "lucide-react";
+
+const LANG_LABELS: { value: Language; label: string }[] = [
+  { value: "ko", label: "ko" },
+  { value: "ja", label: "jp" },
+  { value: "en", label: "en" },
+];
+
+function LangSwitcher({ lang }: { lang: Language }) {
+  return (
+    <div className="flex items-center gap-1 text-sm font-medium" data-testid="select-language">
+      {LANG_LABELS.map(({ value, label }, i) => (
+        <span key={value} className="flex items-center gap-1">
+          {i > 0 && <span className="text-slate-300 select-none">·</span>}
+          <button
+            onClick={() => setLanguage(value)}
+            className={`px-1 py-0.5 rounded transition-colors ${
+              lang === value
+                ? "text-primary font-bold"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            {label}
+          </button>
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export function Navbar() {
   const [lang, setLang] = useState<Language>(getLanguage());
@@ -14,10 +41,6 @@ export function Navbar() {
       setLang(getLanguage());
     });
   }, []);
-
-  const handleLanguageChange = (value: string) => {
-    setLanguage(value as Language);
-  };
 
   const scrollToApply = () => {
     setMobileMenuOpen(false);
@@ -44,23 +67,14 @@ export function Navbar() {
           </nav>
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
-          <Select value={lang} onValueChange={handleLanguageChange}>
-            <SelectTrigger className="w-[120px] h-9" data-testid="select-language">
-              <SelectValue placeholder="Language" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="ko">한국어</SelectItem>
-              <SelectItem value="ja">日本語</SelectItem>
-              <SelectItem value="en">English</SelectItem>
-            </SelectContent>
-          </Select>
+        <div className="hidden md:flex items-center gap-5">
+          <LangSwitcher lang={lang} />
           <Button onClick={scrollToApply} data-testid="button-nav-apply">
             {t("nav.apply")}
           </Button>
         </div>
 
-        <button 
+        <button
           className="md:hidden p-2 text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           data-testid="button-mobile-menu"
@@ -81,16 +95,7 @@ export function Navbar() {
             </Link>
           </nav>
           <div className="flex flex-col gap-4 pt-4 border-t">
-            <Select value={lang} onValueChange={handleLanguageChange}>
-              <SelectTrigger className="w-full" data-testid="select-language-mobile">
-                <SelectValue placeholder="Language" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="ko">한국어</SelectItem>
-                <SelectItem value="ja">日本語</SelectItem>
-                <SelectItem value="en">English</SelectItem>
-              </SelectContent>
-            </Select>
+            <LangSwitcher lang={lang} />
             <Button onClick={scrollToApply} className="w-full" data-testid="button-nav-apply-mobile">
               {t("nav.apply")}
             </Button>
