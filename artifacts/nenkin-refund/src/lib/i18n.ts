@@ -140,7 +140,7 @@ export const translations: TranslationStore = {
   ja: {
     // SEO
     "seo.home.title": "脱退一時金・所得税還付代行【実績多数】| TaxGo",
-    "seo.home.description": "帰国した外国人労働者の厚生年金 脱退一時金申請・所得税（20.42%）還付を代行。納税管理人代行まで一括サポート。帰国後2年以内に申請必要。",
+    "seo.home.description": "厚生年金 脱退一時金申請・所得税（20.42%）還付代行。納税管理人代行まで一括サポート。",
     "seo.home.keywords": "脱退一時金, 脱退一時金代行, 所得税還付, 源泉徴収 還付, 納税管理人, 年金 外国人 帰国, 脱退一時金 申請代行, TaxGo",
     "seo.faq.title": "よくある質問 | 脱退一時金・所得税還付代行 TaxGo",
     "seo.faq.description": "脱退一時金の申請期限・受給額・所得税還付・納税管理人についてよくある質問をご確認ください。帰国後2年以内に申請可能。",
@@ -269,7 +269,7 @@ export const translations: TranslationStore = {
   en: {
     // SEO
     "seo.home.title": "Japan Pension Lump-sum Withdrawal & Tax Refund Agency | TaxGo",
-    "seo.home.description": "Agency service for foreigners applying for Japan Employees' Pension (Kosei Nenkin) Lump-sum Withdrawal and 20.42% income tax refund. Tax Agent (Nouzei Kanrinin) representation included. Apply within 2 years of departure.",
+    "seo.home.description": "Japan Employees' Pension Lump-sum Withdrawal and income tax (20.42%) refund agency. Tax Agent (Nouzei Kanrinin) representation included. One-stop service.",
     "seo.home.keywords": "Japan pension refund, lump-sum withdrawal, Japan income tax refund, 脱退一時金, pension withdrawal agency, Japan tax agent, withholding tax refund Japan, TaxGo",
     "seo.faq.title": "FAQ | Japan Pension Lump-sum Withdrawal & Tax Refund — TaxGo",
     "seo.faq.description": "FAQ on Japan pension lump-sum withdrawal: eligibility, deadlines, refund amounts, income tax refund, and tax agent requirements. Apply within 2 years of leaving Japan.",
