@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Calculator } from "@/components/calculator";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, ChevronRight, FileText, Banknote, Briefcase, Clock, Globe2, Building2, ArrowRight, ArrowDown } from "lucide-react";
+import { CheckCircle2, ChevronRight, Banknote, Briefcase, Clock, Globe2, Building2, ArrowRight, ArrowDown } from "lucide-react";
 
 export default function Home() {
   const [lang, setLang] = useState<Language>(getLanguage());
@@ -282,33 +282,6 @@ export default function Home() {
                   ))}
                 </div>
               </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Required Documents */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="max-w-3xl mx-auto"
-          >
-            <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-center text-slate-900 mb-12">{t("docs.title")}</motion.h2>
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
-              <ul className="space-y-4">
-                {[1, 2, 3, 4, 5].map((num) => (
-                  <motion.li key={num} variants={fadeInUp} className="flex items-start gap-4">
-                    <div className="mt-1 bg-primary/10 p-1 rounded text-primary">
-                      <FileText size={16} />
-                    </div>
-                    <span className="text-lg text-slate-700">{t(`docs.${num}`)}</span>
-                  </motion.li>
-                ))}
-              </ul>
             </div>
           </motion.div>
         </div>
