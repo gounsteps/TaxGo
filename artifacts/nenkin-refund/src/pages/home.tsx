@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Calculator } from "@/components/calculator";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, ChevronRight, FileText, Banknote, Briefcase, Clock, Globe2, Building2 } from "lucide-react";
+import { CheckCircle2, ChevronRight, FileText, Banknote, Briefcase, Clock, Globe2, Building2, ArrowRight, ArrowDown } from "lucide-react";
 
 export default function Home() {
   const [lang, setLang] = useState<Language>(getLanguage());
@@ -237,6 +237,19 @@ export default function Home() {
                       </div>
                     </motion.div>
                   ))}
+                </div>
+
+                {/* Connector → desktop: arrow right, mobile: arrow down */}
+                <div className="hidden md:flex justify-end mt-5">
+                  <div className="flex items-center gap-1.5 text-xs font-medium text-primary border border-primary/25 rounded-full px-3 py-1.5 bg-primary/5">
+                    <span>3</span>
+                    <ArrowRight size={12} />
+                  </div>
+                </div>
+                <div className="md:hidden flex justify-center mt-5">
+                  <div className="flex flex-col items-center gap-1 text-slate-400">
+                    <ArrowDown size={18} />
+                  </div>
                 </div>
               </motion.div>
 
