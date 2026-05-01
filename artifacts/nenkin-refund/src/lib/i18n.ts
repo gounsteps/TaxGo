@@ -20,8 +20,9 @@ export const translations: TranslationStore = {
     "nav.apply": "지금 신청하기",
 
     // Hero
-    "hero.hook": "일본에서 일한 외국인이라면, 연금을 돌려받을 수 있습니다.",
-    "hero.sub": "평균 100만엔 이상의 탈퇴일시금, 소득세 환급까지. 복잡한 절차는 전문가에게 맡기세요.",
+    "hero.hook": "복잡한 일본 연금 환급, 이미 많은 분이 선택하셨습니다",
+    "hero.quote": "탈퇴일시금과 소득세 환급신청은 저희 실적에 맡겨주세요.",
+    "hero.sub": "탈퇴일시금의 20% 소득세 환급, 직접 하기엔 까다롭고 현지 대리인이 꼭 필요합니다. 수많은 신청을 대행하며 다져진 빠르고 정확한 서비스로, 떼인 세금까지 단 1엔도 놓치지 않고 돌려드립니다.",
     "hero.cta": "지금 신청하기",
 
     // What is it
@@ -125,6 +126,7 @@ export const translations: TranslationStore = {
 
     // Hero
     "hero.hook": "日本で働いた外国人なら、年金を取り戻せます。",
+    "hero.quote": "",
     "hero.sub": "平均100万円以上の脱退一時金、さらに所得税の還付まで。複雑な手続きは専門家にお任せください。",
     "hero.cta": "今すぐ申し込む",
 
@@ -239,6 +241,7 @@ export const translations: TranslationStore = {
 
     // Hero
     "hero.hook": "Foreigners who worked in Japan: You can get your pension back.",
+    "hero.quote": "",
     "hero.sub": "Claim your lump-sum withdrawal payment (often over 1M yen) and get a full income tax refund. Leave the complex paperwork to our experts.",
     "hero.cta": "Apply Now",
 

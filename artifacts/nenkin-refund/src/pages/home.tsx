@@ -90,7 +90,12 @@ export default function Home() {
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
               {t("hero.hook")}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
+            {t("hero.quote") && (
+              <motion.blockquote variants={fadeInUp} className="mb-5 border-l-4 border-primary pl-4 text-left italic text-slate-700 text-lg md:text-xl font-medium">
+                "{t("hero.quote")}"
+              </motion.blockquote>
+            )}
+            <motion.p variants={fadeInUp} className="text-base md:text-lg text-slate-600 mb-10 leading-relaxed text-left">
               {t("hero.sub")}
             </motion.p>
             <motion.div variants={fadeInUp}>
