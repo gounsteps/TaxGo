@@ -394,9 +394,9 @@ export function setLanguage(lang: Language) {
   listeners.forEach(l => l());
 }
 
-export function subscribeLanguage(listener: () => void) {
+export function subscribeLanguage(listener: () => void): () => void {
   listeners.add(listener);
-  return () => listeners.delete(listener);
+  return () => { listeners.delete(listener); };
 }
 
 export function t(key: string): string {
