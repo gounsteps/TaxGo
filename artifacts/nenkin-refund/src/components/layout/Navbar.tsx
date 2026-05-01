@@ -9,6 +9,11 @@ function getBlogUrl(lang: Language): string {
   return "https://note.com/texgo";
 }
 
+function getFormUrl(lang: Language): string {
+  if (lang === "ko") return "https://forms.gle/7tQ5xaLqSQPFXsVV7";
+  return "https://forms.gle/ceB3RKYqajPuHJf3A";
+}
+
 const LANG_LABELS: { value: Language; label: string }[] = [
   { value: "ko", label: "ko" },
   { value: "ja", label: "jp" },
@@ -47,14 +52,6 @@ export function Navbar() {
     });
   }, []);
 
-  const scrollToApply = () => {
-    setMobileMenuOpen(false);
-    const applySection = document.getElementById("apply");
-    if (applySection) {
-      applySection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
@@ -77,8 +74,10 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-5">
           <LangSwitcher lang={lang} />
-          <Button onClick={scrollToApply} data-testid="button-nav-apply">
-            {t("nav.apply")}
+          <Button asChild data-testid="button-nav-apply">
+            <a href={getFormUrl(lang)} target="_blank" rel="noopener noreferrer">
+              {t("nav.apply")}
+            </a>
           </Button>
         </div>
 
@@ -107,8 +106,10 @@ export function Navbar() {
           </nav>
           <div className="flex flex-col gap-4 pt-4 border-t">
             <LangSwitcher lang={lang} />
-            <Button onClick={scrollToApply} className="w-full" data-testid="button-nav-apply-mobile">
-              {t("nav.apply")}
+            <Button asChild className="w-full" data-testid="button-nav-apply-mobile">
+              <a href={getFormUrl(lang)} target="_blank" rel="noopener noreferrer">
+                {t("nav.apply")}
+              </a>
             </Button>
           </div>
         </div>

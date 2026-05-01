@@ -103,7 +103,7 @@ export const translations: TranslationStore = {
 
     // FAQ
     "faq.title": "자주 묻는 질문",
-    "faq.count": "7",
+    "faq.count": "9",
     "faq.q1": "탈퇴일시금은 무엇인가요? 그리고 누가 신청가능한가요?",
     "faq.a1": "<p>일본에서 일하며 연금 보험료를 냈던 외국인이 연금을 받지 않고 고국으로 돌아갈 때, <strong>그동안 냈던 돈의 일부를 환급해 주는 제도</strong>입니다.</p><p class='mt-3 font-semibold text-slate-800'>누가 받을 수 있나요?</p><p class='mt-1'>다음 조건에 모두 해당한다면 신청할 수 있습니다.</p><ol class='mt-2 space-y-1 list-decimal list-inside'><li><strong>외국인일 것:</strong> 일본 국적이 아니어야 합니다.</li><li><strong>6개월 이상 납부:</strong> 연금 보험료를 낸 기간이 총 6개월을 넘어야 합니다.</li><li>10년 미만 납부: 연금 보험료를 낸 기간이 총 10년 미만이어야 합니다.</li><li><strong>일본을 떠난 상태:</strong> 일본에 주소가 없어야 합니다. (전출 신고 후 출국 필수)</li><li><strong>연금 수령 이력 없음:</strong> 이전에 연금(장애 연금 포함)을 한 번도 받은 적이 없어야 합니다.</li></ol><p class='mt-3 text-sm text-slate-500'>※ 영주권자의 경우에는 상이한 기준이 적용됩니다.</p>",
     "faq.q2": "탈퇴일시금 신청, 본인이 직접 할 수 있나요?",
@@ -118,12 +118,16 @@ export const translations: TranslationStore = {
     "faq.a6": "네, 가능합니다. 탈퇴일시금을 직접 진행하시고 탈퇴일시금 지급결정통지서를 수령하셨다면 신청하실 수 있습니다. 환급신청폼을 통해 원천징수세 환부금 코스를 선택해 주세요.",
     "faq.q7": "탈퇴일시금 지급결정통지서를 분실하였습니다. 재발행 가능한가요?",
     "faq.a7": "네, 가능합니다. 환급신청폼을 통해 원천징수세 환부금 코스를 선택하여 대행신청을 진행해 주시고, 탈퇴일시금 지급결정통지서 재발급이 필요하다는 내용을 담당자에게 전달해 주세요.",
+    "faq.q8": "탈퇴일시금 신청의 진행상황을 알고 싶어요.",
+    "faq.a8": "일본연금기구에서는 탈퇴일시금 신청 진행상황에 대해서 공개하고 있지 않습니다. 저희 TaxGo에서는 X를 통해, 현재 대행 진행 중인 탈퇴일시금의 처리 완료일을 안내드리고 있습니다. 참고하여 주세요.",
+    "faq.q9": "TaxGo의 탈퇴일시금 대행 실적이 어느 정도인가요?",
+    "faq.a9": "네이버 블로그에서 고객 후기를 참고해 주세요. <a href='https://blog.naver.com/nouzeidaikou/222590067078' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:text-primary/80'>고객 후기 보러가기</a>",
     
     // Footer
     "footer.blog": "공식 블로그",
     "footer.blog.coming": "블로그 준비중",
     "footer.contact": "Contact",
-    "footer.rights": "모든 권리 보유."
+    "footer.rights": "All rights reserved."
   },
   ja: {
     // SEO
@@ -221,7 +225,7 @@ export const translations: TranslationStore = {
 
     // FAQ
     "faq.title": "よくある質問",
-    "faq.count": "7",
+    "faq.count": "9",
     "faq.q1": "脱退一時金とは何ですか？また、誰が申請できますか？",
     "faq.a1": "<p>日本で働きながら年金保険料を納めていた外国人が、年金を受け取らず帰国する際に、<strong>これまで納めたお金の一部を還付してもらえる制度</strong>です。</p><p class='mt-3 font-semibold text-slate-800'>誰が受け取れますか？</p><p class='mt-1'>以下の条件をすべて満たす方が申請できます。</p><ol class='mt-2 space-y-1 list-decimal list-inside'><li><strong>外国人であること：</strong>日本国籍を有していないこと。</li><li><strong>6ヶ月以上納付：</strong>年金保険料の納付期間が合計6ヶ月を超えていること。</li><li>10年未満の納付：年金保険料の納付期間が合計10年未満であること。</li><li><strong>日本を離れていること：</strong>日本国内に住所がないこと。（転出届の提出後に出国必須）</li><li><strong>年金受給歴なし：</strong>以前に年金（障害年金を含む）を一度も受け取ったことがないこと。</li></ol><p class='mt-3 text-sm text-slate-500'>※ 永住者の場合は、異なる基準が適用されます。</p>",
     "faq.q2": "脱退一時金の申請は本人が直接できますか？",
@@ -236,6 +240,10 @@ export const translations: TranslationStore = {
     "faq.a6": "はい、可能です。脱退一時金をご自身で手続きされ、脱退一時金支給決定通知書を受け取られた場合に申請できます。還付申請フォームにて源泉徴収税還付コースをお選びください。",
     "faq.q7": "脱退一時金支給決定通知書を紛失しました。再発行は可能ですか？",
     "faq.a7": "はい、可能です。還付申請フォームにて源泉徴収税還付コースを選択して代行申請を進め、脱退一時金支給決定通知書の再発行が必要である旨を担当者にお伝えください。",
+    "faq.q8": "脱退一時金申請の進捗状況を知りたいです。",
+    "faq.a8": "日本年金機構では、脱退一時金申請の進捗状況について公開していません。TaxGoでは、Xを通じて現在代行中の脱退一時金の処理完了日をお知らせしています。ぜひご参照ください。",
+    "faq.q9": "TaxGoの脱退一時金代行実績はどのくらいですか？",
+    "faq.a9": "ネイバーブログでお客様の口コミをご確認ください。 <a href='https://blog.naver.com/nouzeidaikou/222590067078' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:text-primary/80'>口コミを見る（韓国語）</a>",
     
     // Footer
     "footer.blog": "公式ブログ",
@@ -339,7 +347,7 @@ export const translations: TranslationStore = {
 
     // FAQ
     "faq.title": "Frequently Asked Questions",
-    "faq.count": "7",
+    "faq.count": "9",
     "faq.q1": "What is the Lump-Sum Withdrawal Payment, and who can apply?",
     "faq.a1": "<p>This is a system that allows foreigners who paid pension premiums while working in Japan to receive a refund of a portion of those payments when returning home without receiving a pension.</p><p class='mt-3 font-semibold text-slate-800'>Who is eligible?</p><p class='mt-1'>You can apply if you meet all of the following conditions.</p><ol class='mt-2 space-y-1 list-decimal list-inside'><li><strong>Must be a foreign national:</strong> You must not hold Japanese nationality.</li><li><strong>At least 6 months of contributions:</strong> Your total pension contribution period must exceed 6 months.</li><li>Less than 10 years of contributions: Your total contribution period must be under 10 years.</li><li><strong>No longer residing in Japan:</strong> You must not have a registered address in Japan. (Departure registration required before leaving)</li><li><strong>No history of pension receipt:</strong> You must never have received any pension (including disability pension).</li></ol><p class='mt-3 text-sm text-slate-500'>※ Different criteria apply for permanent residents.</p>",
     "faq.q2": "Can I apply for the Lump-Sum Withdrawal on my own?",
@@ -354,6 +362,10 @@ export const translations: TranslationStore = {
     "faq.a6": "Yes, that is possible. If you have already processed the Lump-Sum Withdrawal yourself and have received the Lump-Sum Withdrawal Payment Decision Notice, you can apply. Please select the Withholding Tax Refund Course through the refund application form.",
     "faq.q7": "I lost my Lump-Sum Withdrawal Payment Decision Notice. Can it be reissued?",
     "faq.a7": "Yes, it can. Please select the Withholding Tax Refund Course through the refund application form to proceed with the agency application, and inform the person in charge that you need the Lump-Sum Withdrawal Payment Decision Notice to be reissued.",
+    "faq.q8": "I want to know the progress of my Lump-sum Withdrawal application.",
+    "faq.a8": "The Japan Pension Service does not publicly disclose the progress of individual Lump-sum Withdrawal applications. At TaxGo, we provide updates on the processing completion dates of ongoing applications via our X (Twitter) account. Please refer to it for the latest information.",
+    "faq.q9": "How many cases has TaxGo handled for the Lump-sum Withdrawal?",
+    "faq.a9": "Please refer to our client reviews on our Naver Blog (Korean). <a href='https://blog.naver.com/nouzeidaikou/222590067078' target='_blank' rel='noopener noreferrer' class='text-primary underline hover:text-primary/80'>View client reviews</a>",
     
     // Footer
     "footer.blog": "Official Blog",
