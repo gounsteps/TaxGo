@@ -17,6 +17,7 @@ export const translations: TranslationStore = {
     // Navbar
     "nav.home": "홈",
     "nav.faq": "FAQ",
+    "nav.blog": "공식 블로그",
     "nav.apply": "지금 신청하기",
 
     // Hero
@@ -121,7 +122,7 @@ export const translations: TranslationStore = {
     // Footer
     "footer.blog": "공식 블로그",
     "footer.blog.coming": "블로그 준비중",
-    "footer.contact": "고객 센터",
+    "footer.contact": "Contact",
     "footer.rights": "모든 권리 보유."
   },
   ja: {
@@ -134,6 +135,7 @@ export const translations: TranslationStore = {
     // Navbar
     "nav.home": "ホーム",
     "nav.faq": "FAQ",
+    "nav.blog": "公式ブログ",
     "nav.apply": "今すぐ申し込む",
 
     // Hero
@@ -238,7 +240,7 @@ export const translations: TranslationStore = {
     // Footer
     "footer.blog": "公式ブログ",
     "footer.blog.coming": "ブログ準備中",
-    "footer.contact": "お問い合わせ",
+    "footer.contact": "Contact",
     "footer.rights": "All rights reserved."
   },
   en: {
@@ -251,6 +253,7 @@ export const translations: TranslationStore = {
     // Navbar
     "nav.home": "Home",
     "nav.faq": "FAQ",
+    "nav.blog": "Blog",
     "nav.apply": "Apply Now",
 
     // Hero

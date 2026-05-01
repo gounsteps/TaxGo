@@ -4,6 +4,11 @@ import { t, setLanguage, getLanguage, Language, subscribeLanguage } from "@/lib/
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
+function getBlogUrl(lang: Language): string {
+  if (lang === "ko") return "https://blog.naver.com/nouzeidaikou/222590067078";
+  return "https://note.com/texgo";
+}
+
 const LANG_LABELS: { value: Language; label: string }[] = [
   { value: "ko", label: "ko" },
   { value: "ja", label: "jp" },
@@ -64,6 +69,9 @@ export function Navbar() {
             <Link href="/faq" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {t("nav.faq")}
             </Link>
+            <a href={getBlogUrl(lang)} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              {t("nav.blog")}
+            </a>
           </nav>
         </div>
 
@@ -93,6 +101,9 @@ export function Navbar() {
             <Link href="/faq" onClick={() => setMobileMenuOpen(false)} className="text-base font-medium">
               {t("nav.faq")}
             </Link>
+            <a href={getBlogUrl(lang)} target="_blank" rel="noopener noreferrer" className="text-base font-medium" onClick={() => setMobileMenuOpen(false)}>
+              {t("nav.blog")}
+            </a>
           </nav>
           <div className="flex flex-col gap-4 pt-4 border-t">
             <LangSwitcher lang={lang} />
