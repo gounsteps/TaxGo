@@ -83,7 +83,7 @@ export const translations: TranslationStore = {
     "process.4.title": "탈퇴일시금 대행처리",
     "process.4.desc": "탈퇴일시금 처리완료까지 약 4개월 이상 소요되며, 탈퇴일시금 신청 및 처리완료시, 신청자에게 안내해 드립니다",
     "process.5.title": "탈퇴일시금 송금",
-    "process.5.desc": "송금 완료 후 신청자에게 바로 안내해 드립니다",
+    "process.5.desc": "탈퇴일시금 송금전, 탈퇴일시금지급결정통지서를 신청자에게 안내해 드립니다",
     "process.6.title": "관할세무서에 소득세 환급신청",
     "process.6.desc": "환급 신청완료까지 약 2개월 이상 소요되며, 세무서에 환급접수 및 처리완료시, 신청자에게 안내해 드립니다",
     "process.7.title": "소득세 환급금 송금",
