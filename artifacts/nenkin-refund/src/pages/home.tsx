@@ -19,7 +19,9 @@ export default function Home() {
   const getFormLink = () => {
     switch (lang) {
       case "ko": return "https://forms.gle/7tQ5xaLqSQPFXsVV7";
-      default: return "https://forms.gle/PLACEHOLDER";
+      case "ja":
+      case "en":
+      default: return "https://forms.gle/ceB3RKYqajPuHJf3A";
     }
   };
 
