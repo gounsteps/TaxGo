@@ -37,16 +37,16 @@ export const translations: TranslationStore = {
     "eligibility.5": "일본 내에 주소지가 없는 자",
 
     // Calculator
-    "calc.title": "예상 환급금 계산기",
+    "calc.title": "탈퇴일시금 계산기",
     "calc.type.label": "연금 종류",
     "calc.type.kosei": "후생연금 (회사원)",
     "calc.type.kokumin": "국민연금 (자영업/아르바이트)",
     "calc.salary.label": "평균 월 보수액 (엔, 세전)",
     "calc.period.label": "가입 기간 (개월)",
-    "calc.result.gross": "총 탈퇴일시금 (세전)",
-    "calc.result.tax": "원천징수 소득세 (20.42%)",
-    "calc.result.net": "실 수령액 (세후)",
-    "calc.result.refund": "소득세 환급 가능액",
+    "calc.result.gross": "탈퇴일시금",
+    "calc.result.tax": "원천징수소득세 (20.42%)",
+    "calc.result.net": "실수령액",
+    "calc.result.refund": "소득세 환급액",
     "calc.notice.kokumin": "국민연금은 세금이 공제되지 않고 전액 지급됩니다.",
     
     // Period Dropdown
@@ -141,7 +141,7 @@ export const translations: TranslationStore = {
     "eligibility.5": "日本国内に住所を有していない方",
 
     // Calculator
-    "calc.title": "予想還付金 計算機",
+    "calc.title": "脱退一時金 計算機",
     "calc.type.label": "年金の種類",
     "calc.type.kosei": "厚生年金（会社員）",
     "calc.type.kokumin": "国民年金（自営業・アルバイト）",
@@ -255,7 +255,7 @@ export const translations: TranslationStore = {
     "eligibility.5": "No longer have a registered address in Japan",
 
     // Calculator
-    "calc.title": "Estimated Refund Calculator",
+    "calc.title": "Lump-Sum Withdrawal Calculator",
     "calc.type.label": "Pension Type",
     "calc.type.kosei": "Employees' Pension (Kosei Nenkin)",
     "calc.type.kokumin": "National Pension (Kokumin Nenkin)",

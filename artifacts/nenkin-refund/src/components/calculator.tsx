@@ -141,26 +141,31 @@ export function Calculator() {
 
         {/* Result Section */}
         <div className="p-8 bg-slate-900 text-white flex flex-col justify-center">
-          <div className="space-y-8">
-            <div>
-              <div className="text-sm text-slate-400 mb-1">{t("calc.result.gross")}</div>
-              <div className="text-3xl font-bold">{formatCurrency(gross)}</div>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="text-sm text-slate-400 mb-1">{t("calc.result.tax")}</div>
-                <div className="text-xl font-semibold text-red-400">-{formatCurrency(tax)}</div>
-              </div>
-              <div>
-                <div className="text-sm text-slate-400 mb-1">{t("calc.result.net")}</div>
-                <div className="text-xl font-semibold text-emerald-400">{formatCurrency(net)}</div>
-              </div>
+          <div className="space-y-5">
+            {/* 1. 탈퇴일시금 */}
+            <div className="flex items-center justify-between">
+              <div className="text-sm text-slate-400">{t("calc.result.gross")}</div>
+              <div className="text-xl font-bold">{formatCurrency(gross)}</div>
             </div>
 
-            <div className="pt-6 border-t border-slate-700">
-              <div className="text-sm text-slate-400 mb-1">{t("calc.result.refund")}</div>
-              <div className="text-4xl font-bold text-primary">{formatCurrency(refund)}</div>
+            {/* 2. 원천징수소득세 */}
+            <div className="flex items-center justify-between">
+              <div className="text-sm text-slate-400">{t("calc.result.tax")}</div>
+              <div className="text-xl font-semibold text-red-400">-{formatCurrency(tax)}</div>
+            </div>
+
+            <div className="border-t border-slate-700" />
+
+            {/* 3. 실수령액 */}
+            <div className="flex items-center justify-between">
+              <div className="text-sm text-slate-400">{t("calc.result.net")}</div>
+              <div className="text-2xl font-bold text-emerald-400">{formatCurrency(net)}</div>
+            </div>
+
+            {/* 4. 소득세 환급액 */}
+            <div className="flex items-center justify-between bg-emerald-950/40 rounded-xl px-4 py-3 border border-emerald-700/30">
+              <div className="text-sm text-emerald-300 font-medium">{t("calc.result.refund")}</div>
+              <div className="text-2xl font-bold text-emerald-400">{formatCurrency(refund)}</div>
             </div>
 
             {type === "kokumin" && (
