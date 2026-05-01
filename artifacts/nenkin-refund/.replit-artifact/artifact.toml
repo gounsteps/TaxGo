@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "日本年金 탈퇴일시금 대행신청"
+title = "TexGo"
 version = "1.0.0"
 id = "artifacts/nenkin-refund"
 router = "path"

@@ -26,18 +26,40 @@ export default function Home() {
   };
 
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "TaxGo",
-    "description": t("seo.home.description"),
-    "url": "https://yourdomain.com",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "nouzeidaikou@gmail.com",
-      "contactType": "customer service"
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "TaxGo",
+      "description": t("seo.home.description"),
+      "url": baseUrl,
+      "sameAs": [
+        "https://x.com/nouzeidaikou",
+        "https://blog.naver.com/nouzeidaikou",
+        "https://note.com/texgo"
+      ],
+      "areaServed": ["KR", "JP"],
+      "serviceType": ["탈퇴일시금 대행", "소득세 환급 대행", "脱退一時金代行", "所得税還付代行"],
+      "knowsAbout": ["脱退一時金", "所得税還付", "납세관리인", "일본 연금 환급"],
+      "inLanguage": ["ko", "ja", "en"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "nouzeidaikou@gmail.com",
+        "contactType": "customer service",
+        "availableLanguage": ["Korean", "Japanese"]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "TaxGo",
+      "url": baseUrl,
+      "inLanguage": ["ko", "ja", "en"],
+      "description": t("seo.home.description")
     }
-  };
+  ];
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -60,11 +82,24 @@ export default function Home() {
         <html lang={lang} />
         <title>{t("seo.home.title")}</title>
         <meta name="description" content={t("seo.home.description")} />
-        <link rel="canonical" href="https://yourdomain.com" />
+        <meta name="keywords" content={t("seo.home.keywords")} />
+        <meta name="author" content="TaxGo" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={baseUrl} />
+        <link rel="alternate" hrefLang="ko" href={`${baseUrl}/?lang=ko`} />
+        <link rel="alternate" hrefLang="ja" href={`${baseUrl}/?lang=ja`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/?lang=en`} />
+        <link rel="alternate" hrefLang="x-default" href={baseUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="TaxGo" />
+        <meta property="og:url" content={baseUrl} />
         <meta property="og:title" content={t("seo.home.title")} />
         <meta property="og:description" content={t("seo.home.description")} />
-        <meta property="og:type" content="website" />
+        <meta property="og:locale" content={lang === "ko" ? "ko_KR" : lang === "ja" ? "ja_JP" : "en_US"} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@nouzeidaikou" />
+        <meta name="twitter:title" content={t("seo.home.title")} />
+        <meta name="twitter:description" content={t("seo.home.description")} />
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>

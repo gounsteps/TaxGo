@@ -25,6 +25,9 @@ export default function FAQ() {
     a: `faq.a${i + 1}`,
   }));
 
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+  const faqUrl = `${baseUrl}/faq`;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -44,11 +47,24 @@ export default function FAQ() {
         <html lang={lang} />
         <title>{t("seo.faq.title")}</title>
         <meta name="description" content={t("seo.faq.description")} />
-        <link rel="canonical" href="https://yourdomain.com/faq" />
+        <meta name="keywords" content={t("seo.faq.keywords")} />
+        <meta name="author" content="TaxGo" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={faqUrl} />
+        <link rel="alternate" hrefLang="ko" href={`${baseUrl}/faq?lang=ko`} />
+        <link rel="alternate" hrefLang="ja" href={`${baseUrl}/faq?lang=ja`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/faq?lang=en`} />
+        <link rel="alternate" hrefLang="x-default" href={faqUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="TaxGo" />
+        <meta property="og:url" content={faqUrl} />
         <meta property="og:title" content={t("seo.faq.title")} />
         <meta property="og:description" content={t("seo.faq.description")} />
-        <meta property="og:type" content="website" />
+        <meta property="og:locale" content={lang === "ko" ? "ko_KR" : lang === "ja" ? "ja_JP" : "en_US"} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@nouzeidaikou" />
+        <meta name="twitter:title" content={t("seo.faq.title")} />
+        <meta name="twitter:description" content={t("seo.faq.description")} />
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
