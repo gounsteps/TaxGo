@@ -1,0 +1,98 @@
+import { Helmet } from "react-helmet-async";
+import { t, getLanguage, subscribeLanguage, Language } from "@/lib/i18n";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { MessageCircleQuestion } from "lucide-react";
+
+export default function FAQ() {
+  const [lang, setLang] = useState<Language>(getLanguage());
+
+  useEffect(() => {
+    return subscribeLanguage(() => {
+      setLang(getLanguage());
+    });
+  }, []);
+
+  const faqs = [
+    { q: "faq.q1", a: "faq.a1" },
+    { q: "faq.q2", a: "faq.a2" },
+    { q: "faq.q3", a: "faq.a3" },
+    { q: "faq.q4", a: "faq.a4" },
+    { q: "faq.q5", a: "faq.a5" },
+    { q: "faq.q6", a: "faq.a6" },
+    { q: "faq.q7", a: "faq.a7" },
+    { q: "faq.q8", a: "faq.a8" },
+    { q: "faq.q9", a: "faq.a9" },
+    { q: "faq.q10", a: "faq.a10" },
+  ];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": t(faq.q),
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": t(faq.a)
+      }
+    }))
+  };
+
+  return (
+    <>
+      <Helmet>
+        <html lang={lang} />
+        <title>{t("seo.faq.title")}</title>
+        <meta name="description" content={t("seo.faq.description")} />
+        <link rel="canonical" href="https://yourdomain.com/faq" />
+        <meta property="og:title" content={t("seo.faq.title")} />
+        <meta property="og:description" content={t("seo.faq.description")} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
+      </Helmet>
+
+      <div className="min-h-screen bg-slate-50 py-20">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-3xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <MessageCircleQuestion className="text-primary w-8 h-8" />
+              </div>
+              <h1 className="text-4xl font-bold text-slate-900 mb-4">{t("faq.title")}</h1>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="border-b border-slate-100 last:border-0 py-2">
+                    <AccordionTrigger className="text-left font-semibold text-slate-800 hover:text-primary transition-colors hover:no-underline" data-testid={`accordion-faq-${index}`}>
+                      {t(faq.q)}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-slate-600 leading-relaxed pt-2 pb-4">
+                      {t(faq.a)}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </>
+  );
+}
