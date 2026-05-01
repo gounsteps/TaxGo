@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="/?lang=ko" />
-    <xhtml:link rel="alternate" hreflang="ja" href="/?lang=ja" />
-    <xhtml:link rel="alternate" hreflang="en" href="/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="/" />
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://taxgo.jp/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://taxgo.jp/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://taxgo.jp/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://taxgo.jp/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://taxgo.jp/" />
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>/faq</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="/faq?lang=ko" />
-    <xhtml:link rel="alternate" hreflang="ja" href="/faq?lang=ja" />
-    <xhtml:link rel="alternate" hreflang="en" href="/faq?lang=en" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="/faq" />
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://taxgo.jp/faq</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://taxgo.jp/faq?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://taxgo.jp/faq?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://taxgo.jp/faq?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://taxgo.jp/faq" />
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -22,4 +22,4 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: /sitemap.xml
+Sitemap: https://taxgo.jp/sitemap.xml
