@@ -49,8 +49,9 @@ export const translations: TranslationStore = {
     "calc.period.label": "가입 기간 (개월)",
     "calc.result.gross": "탈퇴일시금",
     "calc.result.tax": "원천징수소득세 (20.42%)",
-    "calc.result.net": "실수령액",
+    "calc.result.net": "탈퇴일시금 실수령액",
     "calc.result.refund": "소득세 환급액",
+    "calc.result.total.label": "신청자분 환급받으시는 금액",
     "calc.notice.kokumin": "국민연금은 세금이 공제되지 않고 전액 지급됩니다.",
     
     // Period Dropdown
@@ -173,8 +174,9 @@ export const translations: TranslationStore = {
     "calc.period.label": "加入期間（ヶ月）",
     "calc.result.gross": "総脱退一時金（税引前）",
     "calc.result.tax": "源泉所得税（20.42%）",
-    "calc.result.net": "実受取額（税引後）",
+    "calc.result.net": "脱退一時金 実受取額",
     "calc.result.refund": "所得税還付可能額",
+    "calc.result.total.label": "申請者様の受取総額",
     "calc.notice.kokumin": "国民年金は税金が控除されず、全額支給されます。",
     
     // Period Dropdown
@@ -297,8 +299,9 @@ export const translations: TranslationStore = {
     "calc.period.label": "Enrollment Period (Months)",
     "calc.result.gross": "Total Lump-sum Withdrawal (Pre-tax)",
     "calc.result.tax": "Withholding Tax (20.42%)",
-    "calc.result.net": "Net Amount Received",
+    "calc.result.net": "Lump-sum Net Amount",
     "calc.result.refund": "Potential Tax Refund",
+    "calc.result.total.label": "Total Amount You'll Receive",
     "calc.notice.kokumin": "National Pension is paid in full with no tax withholding.",
     
     // Period Dropdown

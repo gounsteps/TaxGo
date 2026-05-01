@@ -156,16 +156,28 @@ export function Calculator() {
 
             <div className="border-t border-slate-700" />
 
-            {/* 3. 실수령액 */}
-            <div className="flex items-center justify-between">
-              <div className="text-sm text-slate-400">{t("calc.result.net")}</div>
-              <div className="text-2xl font-bold text-emerald-400">{formatCurrency(net)}</div>
-            </div>
+            {/* 신청자분 환급받으시는 금액 wrapper */}
+            <div className="rounded-xl border border-emerald-600/40 bg-emerald-950/20 p-4 space-y-3">
+              <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wide text-center">
+                {t("calc.result.total.label")}
+              </div>
 
-            {/* 4. 소득세 환급액 */}
-            <div className="flex items-center justify-between bg-emerald-950/40 rounded-xl px-4 py-3 border border-emerald-700/30">
-              <div className="text-sm text-emerald-300 font-medium">{t("calc.result.refund")}</div>
-              <div className="text-2xl font-bold text-emerald-400">{formatCurrency(refund)}</div>
+              <div className="flex items-center gap-2">
+                {/* 탈퇴일시금 실수령액 박스 */}
+                <div className="flex-1 bg-emerald-950/50 rounded-lg border border-emerald-700/40 px-3 py-3 text-center">
+                  <div className="text-xs text-emerald-300 font-medium mb-1">{t("calc.result.net")}</div>
+                  <div className="text-xl font-bold text-emerald-400">{formatCurrency(net)}</div>
+                </div>
+
+                {/* + 기호 */}
+                <div className="text-2xl font-bold text-emerald-400 flex-shrink-0">+</div>
+
+                {/* 소득세 환급액 박스 */}
+                <div className="flex-1 bg-emerald-950/50 rounded-lg border border-emerald-700/40 px-3 py-3 text-center">
+                  <div className="text-xs text-emerald-300 font-medium mb-1">{t("calc.result.refund")}</div>
+                  <div className="text-xl font-bold text-emerald-400">{formatCurrency(refund)}</div>
+                </div>
+              </div>
             </div>
 
             {type === "kokumin" && (
