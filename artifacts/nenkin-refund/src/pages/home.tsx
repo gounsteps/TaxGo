@@ -331,7 +331,7 @@ export default function Home() {
             className="max-w-2xl mx-auto text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("apply.title")}</h2>
-            <p className="text-xl text-primary-foreground/80 mb-10">
+            <p className="text-xl text-primary-foreground/80 mb-10 whitespace-pre-line">
               {t("apply.desc")}
             </p>
             <a href={getFormLink()} target="_blank" rel="noopener noreferrer">

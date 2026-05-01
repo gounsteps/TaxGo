@@ -103,7 +103,7 @@ export const translations: TranslationStore = {
 
     // Apply
     "apply.title": "지금 바로 상담하세요",
-    "apply.desc": "출국 후 2년이 지나면 소중한 연금을 돌려받을 수 없습니다.",
+    "apply.desc": "출국 후 2년이 지나면 탈퇴일시금 신청자체가 불가능해집니다.\n복잡한 절차는 저희가 맡습니다. 부담 없이 먼저 상담부터 받아보세요.",
     "apply.btn": "상담 신청서 작성하기",
 
     // FAQ
@@ -230,7 +230,7 @@ export const translations: TranslationStore = {
 
     // Apply
     "apply.title": "今すぐご相談ください",
-    "apply.desc": "出国後2年が経過すると、大切な年金を取り戻すことができません。",
+    "apply.desc": "出国後2年が経過すると、脱退一時金の申請自体ができなくなります。\n複雑な手続きはお任せください。お気軽にまずはご相談からどうぞ。",
     "apply.btn": "相談申込書を作成する",
 
     // FAQ
@@ -357,7 +357,7 @@ export const translations: TranslationStore = {
 
     // Apply
     "apply.title": "Contact Us Today",
-    "apply.desc": "If more than 2 years pass after leaving Japan, your right to claim will expire.",
+    "apply.desc": "Once 2 years have passed since leaving Japan, applying for the lump-sum withdrawal becomes impossible.\nLeave the complex procedures to us. Feel free to reach out for a consultation first.",
     "apply.btn": "Fill Out Application Form",
 
     // FAQ
