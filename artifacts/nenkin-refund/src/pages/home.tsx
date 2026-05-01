@@ -148,7 +148,8 @@ export default function Home() {
             variants={fadeInUp}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">{t("what.title")}</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-3">{t("what.title")}</h2>
+            <p className="text-lg font-semibold text-primary mb-6">{t("what.sub")}</p>
             <p className="text-lg text-slate-600 leading-relaxed">
               {t("what.desc")}
             </p>
@@ -220,7 +221,8 @@ export default function Home() {
             <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
               <Banknote className="text-primary w-8 h-8" />
             </div>
-            <h2 className="text-3xl font-bold mb-6">{t("tax.title")}</h2>
+            <h2 className="text-3xl font-bold mb-3">{t("tax.title")}</h2>
+            <p className="text-lg font-semibold text-emerald-400 mb-6">{t("tax.sub")}</p>
             <p className="text-lg text-slate-300 leading-relaxed">
               {t("tax.desc")}
             </p>

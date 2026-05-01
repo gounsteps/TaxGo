@@ -30,7 +30,8 @@ export const translations: TranslationStore = {
 
     // What is it
     "what.title": "탈퇴일시금이란?",
-    "what.desc": "일본에서 근무하며 납부한 후생연금 또는 국민연금은 귀국 시 조건을 만족하면 돌려받을 수 있습니다. 출국 후 2년 이내에만 신청이 가능하므로 빠른 준비가 필요합니다.",
+    "what.sub": "2년이 지나면 사라지는 권리, 놓치지 마세요",
+    "what.desc": "일본에서 근무하며 납부한 후생연금·국민연금은 귀국 후 일정 조건을 충족하면 돌려받을 수 있습니다. 단, 출국일로부터 2년 이내에만 신청이 가능하기 때문에 늦어질수록 환급 자체가 불가능해집니다. 한국에서 일본 관청과 직접 소통하며 서류를 준비하는 일은 결코 간단하지 않습니다. 빠르고 확실하게 받으려면 일본 현지 대행이 가장 안전한 선택입니다.",
 
     // Eligibility
     "eligibility.title": "신청 자격",
@@ -68,7 +69,8 @@ export const translations: TranslationStore = {
 
     // Tax Refund
     "tax.title": "소득세 전액 환급",
-    "tax.desc": "후생연금 탈퇴일시금을 받을 때 20.42%의 세금이 원천징수됩니다. 하지만 납세관리인을 선임하면 이 세금을 전액 환급받을 수 있습니다. 당사는 탈퇴일시금 청구부터 소득세 환급까지 원스톱으로 대행해 드립니다.",
+    "tax.sub": "납세관리인 없이는 20.42%를 그대로 잃습니다",
+    "tax.desc": "후생연금 탈퇴일시금을 수령할 때 20.42%가 소득세로 원천징수됩니다. 이 세금은 일본에 거주하는 '납세관리인'을 선임해야만 환급 신청이 가능하며, 선임하지 않으면 그대로 일본 국고에 귀속되어 돌려받을 수 없습니다. 당사는 납세관리인 선임부터 탈퇴일시금 청구, 소득세 환급까지 원스톱으로 대행해 드립니다. 복잡한 절차에 시간을 쓰지 마시고, 수많은 실적으로 검증된 저희에게 맡기세요.",
 
     // Process
     "process.title": "진행 절차",
@@ -155,7 +157,8 @@ export const translations: TranslationStore = {
 
     // What is it
     "what.title": "脱退一時金とは？",
-    "what.desc": "日本で勤務し納付した厚生年金または国民年金は、帰国時に条件を満たせば払い戻しを受けられます。出国後2年以内の申請が必要ですので、早めの準備が大切です。",
+    "what.sub": "2年で消える権利、見逃さないでください",
+    "what.desc": "日本で勤務し納付した厚生年金・国民年金は、帰国後に一定の条件を満たせば払い戻しを受けられます。ただし、出国日から2年以内にのみ申請が可能なため、遅れるほど還付自体ができなくなります。海外から日本の官庁と直接やり取りしながら書類を準備することは、決して簡単ではありません。確実かつ迅速に受け取るためには、日本現地の代行サービスが最も安全な選択です。",
 
     // Eligibility
     "eligibility.title": "申請資格",
@@ -193,7 +196,8 @@ export const translations: TranslationStore = {
 
     // Tax Refund
     "tax.title": "所得税の全額還付",
-    "tax.desc": "厚生年金の脱退一時金を受け取る際、20.42%の税金が源泉徴収されます。しかし、納税管理人を選任すれば、この税金を全額還付してもらうことが可能です。当社では、脱退一時金の請求から所得税還付までワンストップで代行いたします。",
+    "tax.sub": "納税管理人なしでは、20.42%をそのまま失います",
+    "tax.desc": "厚生年金の脱退一時金を受け取る際、20.42%が所得税として源泉徴収されます。この税金は、日本在住の「納税管理人」を選任しなければ還付申請ができず、選任しない場合はそのまま日本の国庫に帰属し、取り戻すことができません。当社は、納税管理人の選任から脱退一時金の請求、所得税還付までワンストップで代行いたします。複雑な手続きに時間を費やさず、数多くの実績で検証された私たちにお任せください。",
 
     // Process
     "process.title": "進行手順",
@@ -280,7 +284,8 @@ export const translations: TranslationStore = {
 
     // What is it
     "what.title": "What is the Lump-sum Withdrawal?",
-    "what.desc": "If you paid into the Japanese Employees' Pension or National Pension system while working in Japan, you can claim a refund upon leaving the country. Applications must be submitted within 2 years of departure.",
+    "what.sub": "A Right That Expires in 2 Years — Don't Miss It",
+    "what.desc": "The Employees' Pension (Kosei Nenkin) and National Pension (Kokumin Nenkin) contributions you paid while working in Japan can be refunded after leaving, provided you meet the eligibility conditions. However, applications are only accepted within 2 years of your departure date — the longer you wait, the more likely you are to lose this right entirely. Communicating directly with Japanese government offices from abroad while preparing the required documents is far from simple. For a fast and reliable refund, using a local agent in Japan is the safest choice.",
 
     // Eligibility
     "eligibility.title": "Eligibility Requirements",
@@ -318,7 +323,8 @@ export const translations: TranslationStore = {
 
     // Tax Refund
     "tax.title": "100% Income Tax Refund",
-    "tax.desc": "When receiving the Employees' Pension Lump-sum Withdrawal, 20.42% is deducted as withholding tax. By appointing a tax representative (tax manager) before you leave or from abroad, you can get this tax fully refunded. We handle both procedures simultaneously.",
+    "tax.sub": "Without a Tax Agent, You Lose 20.42% Forever",
+    "tax.desc": "When receiving the Employees' Pension Lump-sum Withdrawal, 20.42% is withheld as income tax upfront. This tax can only be refunded by appointing a 'Tax Agent' (Nouzei Kanrinin) residing in Japan — without one, the withheld amount goes directly to the Japanese treasury and cannot be recovered. We handle everything in one stop: appointing your Tax Agent, filing the lump-sum withdrawal claim, and completing the income tax refund. Don't spend your time navigating complex procedures — trust our proven track record to get every yen back for you.",
 
     // Process
     "process.title": "Process Timeline",
