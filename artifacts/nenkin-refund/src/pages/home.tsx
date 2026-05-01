@@ -25,12 +25,6 @@ export default function Home() {
     }
   };
 
-  const scrollToApply = () => {
-    const applySection = document.getElementById("apply");
-    if (applySection) {
-      applySection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -99,8 +93,10 @@ export default function Home() {
               {t("hero.sub")}
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <Button size="lg" className="h-14 px-8 text-lg rounded-full" onClick={scrollToApply} data-testid="button-hero-apply">
-                {t("hero.cta")}
+              <Button size="lg" className="h-14 px-8 text-lg rounded-full" asChild data-testid="button-hero-apply">
+                <a href={getFormLink()} target="_blank" rel="noopener noreferrer">
+                  {t("hero.cta")}
+                </a>
               </Button>
             </motion.div>
           </motion.div>
