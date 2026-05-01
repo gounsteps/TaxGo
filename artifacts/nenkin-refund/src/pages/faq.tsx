@@ -19,18 +19,11 @@ export default function FAQ() {
     });
   }, []);
 
-  const faqs = [
-    { q: "faq.q1", a: "faq.a1" },
-    { q: "faq.q2", a: "faq.a2" },
-    { q: "faq.q3", a: "faq.a3" },
-    { q: "faq.q4", a: "faq.a4" },
-    { q: "faq.q5", a: "faq.a5" },
-    { q: "faq.q6", a: "faq.a6" },
-    { q: "faq.q7", a: "faq.a7" },
-    { q: "faq.q8", a: "faq.a8" },
-    { q: "faq.q9", a: "faq.a9" },
-    { q: "faq.q10", a: "faq.a10" },
-  ];
+  const faqCount = parseInt(t("faq.count") || "10", 10);
+  const faqs = Array.from({ length: faqCount }, (_, i) => ({
+    q: `faq.q${i + 1}`,
+    a: `faq.a${i + 1}`,
+  }));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -84,7 +77,7 @@ export default function FAQ() {
                       {t(faq.q)}
                     </AccordionTrigger>
                     <AccordionContent className="text-slate-600 leading-relaxed pt-2 pb-4">
-                      {t(faq.a)}
+                      <div dangerouslySetInnerHTML={{ __html: t(faq.a) }} />
                     </AccordionContent>
                   </AccordionItem>
                 ))}
