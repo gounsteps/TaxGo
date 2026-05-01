@@ -10,7 +10,7 @@ export const translations: TranslationStore = {
   ko: {
     // SEO
     "seo.home.title": "일본 탈퇴일시금·소득세 환급 대행 | TaxGo",
-    "seo.home.description": "일본에서 근무 후 귀국한 외국인의 탈퇴일시금 및 소득세(20.42%) 환급을 대행합니다. 납세관리인 선임부터 세무서 신고까지 원스톱 서비스. 출국 후 2년 이내 신청 필수.",
+    "seo.home.description": "일본에서 근무 후 귀국한 외국인의 후생연금 탈퇴일시금신청 및 소득세(20.42%) 환급을 대행합니다. 납세관리인 대행까지 원스톱 서비스. 출국 후 2년 이내 신청 필수.",
     "seo.home.keywords": "탈퇴일시금, 탈퇴일시금 대행, 일본 연금 환급, 소득세 환급, 납세관리인, 일본 연금 탈퇴, 환급 대행, TaxGo, 脱退一時金, 所得税還付",
     "seo.faq.title": "자주 묻는 질문 | 탈퇴일시금·소득세 환급 대행 TaxGo",
     "seo.faq.description": "탈퇴일시금 신청 기간, 수령 금액, 소득세 환급, 납세관리인 선임 등 자주 묻는 질문을 확인하세요. 일본 귀국 후 2년 이내 신청 가능.",
@@ -137,7 +137,7 @@ export const translations: TranslationStore = {
   ja: {
     // SEO
     "seo.home.title": "脱退一時金・所得税還付代行【実績多数】| TaxGo",
-    "seo.home.description": "帰国した外国人労働者の脱退一時金申請・源泉徴収税（20.42%）還付を代行。納税管理人の選任から税務署申告まで一括サポート。帰国後2年以内に申請必要。",
+    "seo.home.description": "帰国した外国人労働者の厚生年金 脱退一時金申請・所得税（20.42%）還付を代行。納税管理人代行まで一括サポート。帰国後2年以内に申請必要。",
     "seo.home.keywords": "脱退一時金, 脱退一時金代行, 所得税還付, 源泉徴収 還付, 納税管理人, 年金 外国人 帰国, 脱退一時金 申請代行, TaxGo",
     "seo.faq.title": "よくある質問 | 脱退一時金・所得税還付代行 TaxGo",
     "seo.faq.description": "脱退一時金の申請期限・受給額・所得税還付・納税管理人についてよくある質問をご確認ください。帰国後2年以内に申請可能。",
@@ -264,7 +264,7 @@ export const translations: TranslationStore = {
   en: {
     // SEO
     "seo.home.title": "Japan Pension Lump-sum Withdrawal & Tax Refund Agency | TaxGo",
-    "seo.home.description": "Agency service for foreigners reclaiming Japan pension (Lump-sum Withdrawal) and 20.42% withheld income tax. Tax Agent representation included. Apply within 2 years of departure from Japan.",
+    "seo.home.description": "Agency service for foreigners applying for Japan Employees' Pension (Kosei Nenkin) Lump-sum Withdrawal and 20.42% income tax refund. Tax Agent (Nouzei Kanrinin) representation included. Apply within 2 years of departure.",
     "seo.home.keywords": "Japan pension refund, lump-sum withdrawal, Japan income tax refund, 脱退一時金, pension withdrawal agency, Japan tax agent, withholding tax refund Japan, TaxGo",
     "seo.faq.title": "FAQ | Japan Pension Lump-sum Withdrawal & Tax Refund — TaxGo",
     "seo.faq.description": "FAQ on Japan pension lump-sum withdrawal: eligibility, deadlines, refund amounts, income tax refund, and tax agent requirements. Apply within 2 years of leaving Japan.",
