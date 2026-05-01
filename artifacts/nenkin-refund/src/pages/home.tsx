@@ -117,7 +117,9 @@ export default function Home() {
             className="max-w-3xl mx-auto text-center"
           >
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
-              {t("hero.hook")}
+              {t("hero.hook.part1")}
+              <span className="text-primary">{t("hero.hook.highlight")}</span>
+              {t("hero.hook.part3")}
             </motion.h1>
             {t("hero.quote") && (
               <motion.blockquote variants={fadeInUp} className="mb-5 border-l-4 border-primary pl-4 text-left italic text-slate-700 text-lg md:text-xl font-medium">
