@@ -117,7 +117,7 @@ export default function Home() {
             className="max-w-3xl mx-auto text-center"
           >
             <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
-              {t("hero.hook.part1")}
+              {t("hero.hook.part1") !== "hero.hook.part1" && t("hero.hook.part1")}
               <span className="text-primary">{t("hero.hook.highlight")}</span>
               {t("hero.hook.part3")}
             </motion.h1>

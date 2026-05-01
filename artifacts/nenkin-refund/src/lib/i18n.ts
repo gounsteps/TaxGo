@@ -154,7 +154,6 @@ export const translations: TranslationStore = {
 
     // Hero
     "hero.hook": "厚生年金の脱退一時金申請から所得税還付まで、すでに数多くの方がTaxGoを選んでいます",
-    "hero.hook.part1": "",
     "hero.hook.highlight": "厚生年金の脱退一時金申請から所得税還付まで",
     "hero.hook.part3": "、すでに数多くの方がTaxGoを選んでいます",
     "hero.quote": "脱退一時金と所得税還付は、豊富な実績で証明された私たちにお任せください。",
@@ -283,9 +282,8 @@ export const translations: TranslationStore = {
     "nav.apply": "Apply Now",
 
     // Hero
-    "hero.hook": "From Japan Employees' Pension Lump-sum Withdrawal to Income Tax Refund — Already Chosen by Countless Clients at TaxGo",
-    "hero.hook.part1": "",
-    "hero.hook.highlight": "From Japan Employees' Pension Lump-sum Withdrawal to Income Tax Refund",
+    "hero.hook": "End-to-End Support for Japanese Pension Lump-sum Withdrawals and Income Tax Refunds — Already Chosen by Countless Clients at TaxGo",
+    "hero.hook.highlight": "End-to-End Support for Japanese Pension Lump-sum Withdrawals and Income Tax Refunds",
     "hero.hook.part3": " — Already Chosen by Countless Clients at TaxGo",
     "hero.quote": "For lump-sum withdrawals and income tax refunds, trust us — proven by our track record.",
     "hero.sub": "To claim the 20% income tax withheld from your lump-sum withdrawal, you are legally required to designate a resident 'Tax Agent' in Japan. With our experience handling countless applications, we process everything quickly and accurately — ensuring not a single yen of what you're owed goes unclaimed.",
@@ -418,5 +416,6 @@ export function subscribeLanguage(listener: () => void): () => void {
 }
 
 export function t(key: string): string {
-  return translations[currentLang][key] || key;
+  const val = translations[currentLang]?.[key];
+  return val ?? key;
 }
