@@ -23,9 +23,9 @@ export const translations: TranslationStore = {
     "nav.apply": "지금 신청하기",
 
     // Hero
-    "hero.hook": "복잡한 일본 연금 환급, 이미 많은 분이 선택하셨습니다",
-    "hero.quote": "탈퇴일시금과 소득세 환급신청은 저희 실적에 맡겨주세요.",
-    "hero.sub": "탈퇴일시금의 20% 소득세 환급, 직접 하기엔 까다롭고 현지 대리인이 꼭 필요합니다. 수많은 신청을 대행하며 다져진 빠르고 정확한 서비스로, 떼인 세금까지 단 1엔도 놓치지 않고 돌려드립니다.",
+    "hero.hook": "복잡한 일본 연금 환급, 이미 수많은 분들이 저희(TaxGo)를 선택했습니다",
+    "hero.quote": "탈퇴일시금과 소득세 환급, 풍부한 실적으로 증명된 저희에게 맡기세요.",
+    "hero.sub": "탈퇴일시금의 20%에 달하는 소득세를 환급받으려면, 일본 거주 중인 '납세관리인'을 반드시 지정해야 합니다. 수많은 신청을 대행해 온 경험으로 빠르고 정확하게 처리해 드리며, 돌려받아야 할 세금 단 1엔까지 빠짐없이 찾아드립니다.",
     "hero.cta": "지금 신청하기",
 
     // What is it
@@ -148,9 +148,9 @@ export const translations: TranslationStore = {
     "nav.apply": "今すぐ申し込む",
 
     // Hero
-    "hero.hook": "「日本年金の脱退一時金・所得税還付、確かな実績でスピーディーにサポート」",
-    "hero.quote": "脱退一時金と所得税の還付申請は、豊富な実績の弊社にお任せください。",
-    "hero.sub": "脱退一時金の約20%にのぼる所得税還付は、日本国内の「納税管理人」が不可欠です。数多くの代行実績を通じて培った迅速かつ正確なサービスで、差し引かれた税金を1円たりとも逃さずお手元にお戻しします。",
+    "hero.hook": "複雑な日本の年金還付、すでに数多くの方がTaxGoを選んでいます",
+    "hero.quote": "脱退一時金と所得税還付は、豊富な実績で証明された私たちにお任せください。",
+    "hero.sub": "脱退一時金の20%に相当する所得税の還付を受けるには、日本在住の「納税管理人」を必ず指定する必要があります。数多くの申請を代行してきた経験で、迅速かつ正確に手続きを進め、取り戻すべき税金を1円たりとも漏らさずお手元にお届けします。",
     "hero.cta": "今すぐ申し込む",
 
     // What is it
@@ -273,9 +273,9 @@ export const translations: TranslationStore = {
     "nav.apply": "Apply Now",
 
     // Hero
-    "hero.hook": "Complex Japan Pension Refunds: Trusted by Many.",
-    "hero.quote": "Leave your Lump-sum Withdrawal and Income Tax refund to our proven track record.",
-    "hero.sub": "Claiming the 20.42% income tax withheld from your pension is a complex process that legally requires a local \"Tax Agent\" in Japan. With our extensive experience in handling numerous successful cases, we provide a fast and precise service to ensure you recover every single yen. We don't let a single yen slip away.",
+    "hero.hook": "Complex Japan Pension Refunds — Already Chosen by Countless Clients at TaxGo",
+    "hero.quote": "For lump-sum withdrawals and income tax refunds, trust us — proven by our track record.",
+    "hero.sub": "To claim the 20% income tax withheld from your lump-sum withdrawal, you are legally required to designate a resident 'Tax Agent' in Japan. With our experience handling countless applications, we process everything quickly and accurately — ensuring not a single yen of what you're owed goes unclaimed.",
     "hero.cta": "Apply Now",
 
     // What is it
