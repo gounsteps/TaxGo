@@ -16,6 +16,13 @@ export default function Home() {
     });
   }, []);
 
+  const getFormLink = () => {
+    switch (lang) {
+      case "ko": return "https://forms.gle/7tQ5xaLqSQPFXsVV7";
+      default: return "https://forms.gle/PLACEHOLDER";
+    }
+  };
+
   const scrollToApply = () => {
     const applySection = document.getElementById("apply");
     if (applySection) {
@@ -267,7 +274,7 @@ export default function Home() {
             <p className="text-xl text-primary-foreground/80 mb-10">
               {t("apply.desc")}
             </p>
-            <a href="https://forms.gle/PLACEHOLDER" target="_blank" rel="noopener noreferrer">
+            <a href={getFormLink()} target="_blank" rel="noopener noreferrer">
               <Button size="lg" variant="secondary" className="h-16 px-10 text-lg rounded-full w-full sm:w-auto hover:bg-white" data-testid="button-apply-form">
                 {t("apply.btn")}
                 <ChevronRight className="ml-2 h-5 w-5" />
