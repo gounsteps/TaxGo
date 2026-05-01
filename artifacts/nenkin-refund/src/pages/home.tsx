@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Calculator } from "@/components/calculator";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, ChevronRight, FileText, Banknote, Briefcase, Clock, Globe2, Building2 } from "lucide-react";
+import { CheckCircle2, ChevronRight, FileText, Banknote, Briefcase, Clock, Globe2, Building2, ArrowRight, ArrowDown } from "lucide-react";
 
 export default function Home() {
   const [lang, setLang] = useState<Language>(getLanguage());
