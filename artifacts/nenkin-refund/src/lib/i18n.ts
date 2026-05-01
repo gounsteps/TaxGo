@@ -9,9 +9,9 @@ type TranslationStore = {
 export const translations: TranslationStore = {
   ko: {
     // SEO
-    "seo.home.title": "일본 탈퇴일시금 소득세 환급 대행신청 | 노우제이다이코우",
+    "seo.home.title": "일본 탈퇴일시금 소득세 환급 대행신청 | TaxGo",
     "seo.home.description": "일본에서 일하고 귀국하신 외국인 근로자를 위한 탈퇴일시금 및 소득세 환급 대행 서비스. 복잡한 서류 절차 없이 안전하고 빠르게 연금을 돌려받으세요.",
-    "seo.faq.title": "자주 묻는 질문 | 일본 탈퇴일시금 소득세 환급 대행",
+    "seo.faq.title": "자주 묻는 질문 | TaxGo 일본 탈퇴일시금 소득세 환급 대행",
     "seo.faq.description": "일본 탈퇴일시금, 연금 환급, 소득세 환급에 대해 자주 묻는 질문을 확인하세요.",
     
     // Navbar
@@ -93,37 +93,38 @@ export const translations: TranslationStore = {
 
     // FAQ
     "faq.title": "자주 묻는 질문",
-    "faq.q1": "탈퇴일시금이란?",
-    "faq.a1": "일본에서 6개월 이상 일한 외국인이 귀국할 때, 그동안 납부했던 연금의 일부를 돌려받는 제도입니다.",
-    "faq.q2": "신청 가능한 기간은?",
-    "faq.a2": "일본을 출국한 지 2년 이내에만 신청이 가능합니다. 기간이 지나면 권리가 소멸됩니다.",
-    "faq.q3": "대행 수수료는 얼마인가요?",
-    "faq.a3": "환급 예상 금액 및 서류 준비 상황에 따라 다르므로, 상담 신청을 남겨주시면 개별적으로 상세히 안내해 드립니다.",
-    "faq.q4": "얼마나 받을 수 있나요?",
-    "faq.a4": "납부한 연금 종류(후생/국민), 월 평균 보수액, 가입 기간에 따라 다릅니다. 홈페이지의 계산기를 통해 대략적인 금액을 확인해 보세요.",
-    "faq.q5": "소득세 환급도 같이 신청하나요?",
-    "faq.a5": "네, 후생연금의 경우 탈퇴일시금 수령 후 원천징수된 소득세(20.42%)를 전액 돌려받을 수 있으며, 당사에서 한 번에 대행해 드립니다.",
-    "faq.q6": "일본에 직접 가야 하나요?",
-    "faq.a6": "아니요, 방문하실 필요 없이 우편과 온라인을 통해 전 과정이 진행됩니다.",
-    "faq.q7": "얼마나 걸리나요?",
-    "faq.a7": "일본 연금기구의 심사에 보통 3~4개월이 소요되며, 상황에 따라 5~6개월이 걸릴 수도 있습니다.",
+    "faq.q1": "탈퇴일시금이란 무엇이며, 누가 받을 수 있나요?",
+    "faq.a1": "일본 연금(국민연금 또는 후생연금)에 가입했던 외국인이 노령 연금 수급 자격을 채우지 못하고 출국할 경우, 그동안 납부한 보험료의 일부를 돌려받는 제도입니다. 다음 요건을 모두 충족해야 합니다: ① 일본 국적이 아닐 것 ② 연금 보험료 납부 기간이 6개월 이상일 것 ③ 일본에 주소지가 없을 것(출국 후 신청) ④ 연금(장애연금 포함)을 받을 권리가 생긴 적이 없을 것",
+    "faq.q2": "언제까지 신청해야 하나요? (청구 기한)",
+    "faq.a2": "탈퇴일시금은 일본을 떠나 더 이상 일본에 주소가 없게 된 날(전출신고일)로부터 2년 이내에 청구해야 합니다. 탈퇴일시금은 마지막으로 공적 연금 제도의 피보험자 자격을 상실한 날로부터 2년 이내에만 청구할 수 있습니다. 단, 자격을 상실한 날에 일본 국내에 주소가 있는 경우에는 그 후 일본 국내에 주소를 두지 않게 된 날로부터 2년 이내에만 청구할 수 있습니다.",
+    "faq.q3": "얼마나 받을 수 있나요?",
+    "faq.a3": "지급액은 가입했던 연금의 종류와 보험료 납부 기간에 따라 달라집니다. 국민연금은 마지막으로 보험료를 낸 달의 연도에 따라 정해진 금액에 가입 기간별 지급률을 곱하여 계산합니다. 후생연금은 가입 기간 중의 평균 표준보수액과 보험료율, 가입 기간(최대 60개월 상한) 등을 고려하여 산출합니다. 홈페이지 계산기를 이용하시면 예상 금액을 확인하실 수 있습니다.",
+    "faq.q4": "출국 전에도 신청할 수 있나요?",
+    "faq.a4": "원칙적으로는 일본 국내에 주소가 없어야 청구가 가능하므로, 구청에 전출 신고를 마친 후 '출국 예정일' 이후에 청구서를 제출하거나, 완전히 출국한 후에 해외에서 우편으로 신청해야 합니다.",
+    "faq.q5": "대행 수수료는 얼마인가요?",
+    "faq.a5": "환급 예상 금액 및 서류 준비 상황에 따라 다르므로, 상담 신청을 남겨주시면 개별적으로 상세히 안내해 드립니다.",
+    "faq.q6": "신청 후 돈을 받기까지 얼마나 걸리나요?",
+    "faq.a6": "제출하신 서류에 미비점이나 확인사항이 없다면, 청구서 접수 후 약 4개월 후에 지급됩니다. 탈퇴일시금의 송금과 동시에 '탈퇴일시금 지급결정 통지서'를 발송합니다. 서류에 미비점이 있는 경우 지급까지 추가 시간이 소요될 수 있으므로 서류를 꼼꼼히 확인하여 제출하는 것이 중요합니다.",
+    "faq.q7": "일본에 직접 가야 하나요?",
+    "faq.a7": "아니요, 방문하실 필요 없이 우편과 온라인을 통해 전 과정이 진행됩니다.",
     "faq.q8": "한국 은행 계좌로 받을 수 있나요?",
     "faq.a8": "네, 본인 명의의 한국 은행 계좌로 국제 송금을 통해 직접 입금됩니다.",
     "faq.q9": "이미 출국한 지 2년이 지났어요.",
     "faq.a9": "아쉽게도 출국 후 2년이 지나면 신청이 불가능합니다. 따라서 빠른 신청을 권장합니다.",
     "faq.q10": "후생연금과 국민연금의 차이는 무엇인가요?",
-    "faq.a10": "일반적으로 회사에 소속된 직장인은 후생연금에 가입하며, 자영업자나 일부 아르바이트생은 국민연금에 가입합니다.",
+    "faq.a10": "일반적으로 회사에 소속된 직장인은 후생연금에 가입하며, 자영업자나 일부 아르바이트생은 국민연금에 가입합니다. 후생연금 탈퇴일시금 수령 시 20.42%의 소득세가 원천징수되지만, 납세관리인을 선임하면 전액 환급받을 수 있습니다.",
     
     // Footer
     "footer.blog": "공식 블로그",
+    "footer.blog.coming": "블로그 준비중",
     "footer.contact": "고객 센터",
     "footer.rights": "모든 권리 보유."
   },
   ja: {
     // SEO
-    "seo.home.title": "日本 脱退一時金・所得税還付 代行申請 | ノウゼイダイコウ",
+    "seo.home.title": "日本 脱退一時金・所得税還付 代行申請 | TaxGo",
     "seo.home.description": "日本で働き帰国した外国人労働者のための脱退一時金・所得税還付代行サービス。複雑な書類手続きなしで安全かつ迅速に年金を取り戻しましょう。",
-    "seo.faq.title": "よくある質問 | 日本 脱退一時金・所得税還付 代行",
+    "seo.faq.title": "よくある質問 | TaxGo 日本 脱退一時金・所得税還付 代行",
     "seo.faq.description": "日本の脱退一時金、年金還付、所得税還付についてよくある質問をご確認ください。",
     
     // Navbar
@@ -133,7 +134,7 @@ export const translations: TranslationStore = {
 
     // Hero
     "hero.hook": "日本で働いた外国人なら、年金を取り戻せます。",
-    "hero.sub": "平均100万年以上の脱退一時金、さらに所得税の還付まで。複雑な手続きは専門家にお任せください。",
+    "hero.sub": "平均100万円以上の脱退一時金、さらに所得税の還付まで。複雑な手続きは専門家にお任せください。",
     "hero.cta": "今すぐ申し込む",
 
     // What is it
@@ -205,37 +206,38 @@ export const translations: TranslationStore = {
 
     // FAQ
     "faq.title": "よくある質問",
-    "faq.q1": "脱退一時金とは？",
-    "faq.a1": "日本で6ヶ月以上働いた外国人が帰国する際に、これまで納付した年金の一部払い戻しを受けられる制度です。",
-    "faq.q2": "申請可能な期間は？",
-    "faq.a2": "日本を出国してから2年以内にのみ申請が可能です。期間が過ぎると権利が消滅します。",
-    "faq.q3": "代行手数料はいくらですか？",
-    "faq.a3": "予想還付額および書類準備の状況により異なりますので、相談申し込みをしていただければ個別にお見積りをご案内いたします。",
-    "faq.q4": "いくら受け取れますか？",
-    "faq.a4": "納付した年金の種類（厚生・国民）、月平均報酬額、加入期間により異なります。ホームページの計算機で概算額をご確認ください。",
-    "faq.q5": "所得税の還付も一緒に申請しますか？",
-    "faq.a5": "はい、厚生年金の場合、脱退一時金の受領後に源泉徴収された所得税（20.42%）を全額還付でき、当社で一括して代行いたします。",
-    "faq.q6": "直接日本に行く必要がありますか？",
-    "faq.a6": "いいえ、訪問の必要はなく、郵便およびオンラインで全過程を進行します。",
-    "faq.q7": "どのくらいかかりますか？",
-    "faq.a7": "日本年金機構の審査に通常3〜4ヶ月かかり、状況により5〜6ヶ月かかる場合もあります。",
-    "faq.q8": "韓国の銀行口座で受け取れますか？",
+    "faq.q1": "脱退一時金とは何ですか？誰が受け取れますか？",
+    "faq.a1": "日本の年金（国民年金または厚生年金）に加入していた外国人が、老齢年金の受給資格を満たさずに出国する場合、これまで納付した保険料の一部を受け取ることができる制度です。以下の要件をすべて満たす必要があります：① 日本国籍を有していないこと ② 年金保険料の納付期間が6ヶ月以上あること ③ 日本に住所がないこと（出国後に申請）④ 年金（障害年金を含む）を受ける権利が発生したことがないこと",
+    "faq.q2": "いつまでに申請しなければなりませんか？",
+    "faq.a2": "脱退一時金は、日本を離れて日本国内に住所がなくなった日（転出届提出日）から2年以内に請求する必要があります。脱退一時金は、最後に公的年金制度の被保険者資格を喪失した日から2年以内に限り請求することができます。ただし、資格喪失した日に日本国内に住所がある場合は、その後、住所を日本国内に有しなくなった日から2年以内に限り請求することができます。",
+    "faq.q3": "いくら受け取れますか？",
+    "faq.a3": "支給額は加入していた年金の種類と保険料の納付期間によって異なります。国民年金は、最後に保険料を納めた月の年度に応じて定められた額に加入期間別の支給率を掛けて計算します。厚生年金は、加入期間中の平均標準報酬額と保険料率、加入期間（最大60ヶ月上限）などを考慮して算出します。ホームページの計算機でおおよその金額をご確認いただけます。",
+    "faq.q4": "出国前でも申請できますか？",
+    "faq.a4": "原則として、日本国内に住所がなければ請求できないため、市区町村役場で転出届を提出した後、「出国予定日」以降に請求書を提出するか、完全に出国した後に海外から郵送で申請する必要があります。",
+    "faq.q5": "代行手数料はいくらですか？",
+    "faq.a5": "予想還付額および書類準備の状況により異なりますので、相談申し込みをしていただければ個別にお見積りをご案内いたします。",
+    "faq.q6": "申請してからお金を受け取るまでどのくらいかかりますか？",
+    "faq.a6": "提出いただいた書類に不備や確認事項等がなければ、請求書の受付後、およそ4カ月後にお支払いします。脱退一時金の送金と同時に「脱退一時金支給決定通知書」を送付します。書類に不備がある場合、脱退一時金の支給額の決定及びお支払いまでに時間がかかってしまいますので、書類を丁寧にご確認いただいた上で申請手続きを行ってください。",
+    "faq.q7": "直接日本に行く必要がありますか？",
+    "faq.a7": "いいえ、訪問の必要はなく、郵便およびオンラインで全過程を進行します。",
+    "faq.q8": "韓国（自国）の銀行口座で受け取れますか？",
     "faq.a8": "はい、ご本人名義の銀行口座へ国際送金を通じて直接入金されます。",
     "faq.q9": "すでに出国してから2年が過ぎています。",
     "faq.a9": "残念ながら、出国後2年が経過すると申請は不可能です。そのため、早めの申請をお勧めします。",
     "faq.q10": "厚生年金と国民年金の違いは何ですか？",
-    "faq.a10": "一般的に会社に所属する会社員は厚生年金に加入し、自営業者や一部のアルバイトは国民年金に加入します。",
+    "faq.a10": "一般的に会社に所属する会社員は厚生年金に加入し、自営業者や一部のアルバイトは国民年金に加入します。厚生年金の脱退一時金受領時は20.42%の所得税が源泉徴収されますが、納税管理人を選任することで全額還付を受けることができます。",
     
     // Footer
     "footer.blog": "公式ブログ",
+    "footer.blog.coming": "ブログ準備中",
     "footer.contact": "お問い合わせ",
     "footer.rights": "All rights reserved."
   },
   en: {
     // SEO
-    "seo.home.title": "Japan Pension Lump-sum Withdrawal & Tax Refund Agency | Nouzeidaikou",
+    "seo.home.title": "Japan Pension Lump-sum Withdrawal & Tax Refund Agency | TaxGo",
     "seo.home.description": "Professional agency service for foreign workers claiming back Japanese pension (Lump-sum Withdrawal) and income tax refunds. Quick, safe, and hassle-free.",
-    "seo.faq.title": "FAQ | Japan Pension Lump-sum Withdrawal & Tax Refund Agency",
+    "seo.faq.title": "FAQ | TaxGo Japan Pension Lump-sum Withdrawal & Tax Refund Agency",
     "seo.faq.description": "Frequently asked questions regarding the Japanese pension lump-sum withdrawal and tax refund process.",
     
     // Navbar
@@ -317,26 +319,32 @@ export const translations: TranslationStore = {
 
     // FAQ
     "faq.title": "Frequently Asked Questions",
-    "faq.q1": "What is the Lump-sum Withdrawal Payment?",
-    "faq.a1": "It is a system that allows foreigners who have worked in Japan for at least 6 months to claim a partial refund of their paid pension upon returning home.",
-    "faq.q2": "When can I apply?",
-    "faq.a2": "You must apply within 2 years of leaving Japan. After 2 years, your rights expire.",
-    "faq.q3": "How much is the agency fee?",
-    "faq.a3": "Fees depend on the estimated refund amount and your document status. Please request a consultation for a detailed quote.",
-    "faq.q4": "How much will I receive?",
-    "faq.a4": "It depends on the type of pension, average monthly salary, and enrollment period. Please use our calculator for an estimate.",
-    "faq.q5": "Do you also apply for the income tax refund?",
-    "faq.a5": "Yes, for Employees' Pension, the withheld tax (20.42%) can be fully refunded. We process this along with your withdrawal claim.",
-    "faq.q6": "Do I need to visit Japan?",
-    "faq.a6": "No, the entire process is handled remotely via mail and online.",
-    "faq.q7": "How long does it take?",
-    "faq.a7": "The review by the Japan Pension Service usually takes 3-4 months, but can take 5-6 months depending on circumstances.",
+    "faq.q1": "What is the Lump-sum Withdrawal Payment, and who can receive it?",
+    "faq.a1": "It is a system that allows foreigners who paid into Japan's pension system (National or Employees' Pension) to reclaim a portion of the premiums they paid when leaving Japan without qualifying for old-age pension benefits. All of the following conditions must be met: ① You do not hold Japanese nationality ② You have paid pension premiums for at least 6 months ③ You no longer have an address in Japan (apply after departure) ④ You have never acquired the right to receive a pension (including disability pension)",
+    "faq.q2": "What is the deadline for applying?",
+    "faq.a2": "You must apply for the lump-sum withdrawal within 2 years of the date you left Japan and no longer had a registered address there. Applications can only be submitted within 2 years of the date you lost insured status under the public pension system. However, if you had a Japanese address on the date you lost insured status, you have 2 years from the date you no longer had an address in Japan.",
+    "faq.q3": "How much will I receive?",
+    "faq.a3": "The amount depends on the type of pension you were enrolled in and the length of your contribution period. For National Pension (Kokumin Nenkin), a fixed amount based on the fiscal year of your last payment is multiplied by a factor according to enrollment period. For Employees' Pension (Kosei Nenkin), it is calculated based on your average standard remuneration, the premium rate, and contribution period (capped at 60 months). Use the calculator on our homepage for an estimate.",
+    "faq.q4": "Can I apply before leaving Japan?",
+    "faq.a4": "In principle, you must have no registered address in Japan to be eligible. Therefore, you should submit the claim after completing your de-registration (转出届) at the local municipal office and after your planned departure date, or send your application by post from abroad after you have fully left Japan.",
+    "faq.q5": "How much is the agency fee?",
+    "faq.a5": "Fees depend on the estimated refund amount and your document status. Please contact us for a personalized consultation and quote.",
+    "faq.q6": "How long does it take to receive payment after applying?",
+    "faq.a6": "If your submitted documents have no issues, payment will be made approximately 4 months after the claim is received. A 'Lump-sum Withdrawal Payment Decision Notice' will be sent at the same time as the remittance. If there are any issues with your documents, payment may be delayed, so it is important to submit complete and accurate documents.",
+    "faq.q7": "Do I need to visit Japan?",
+    "faq.a7": "No, the entire process is handled remotely via mail and online.",
     "faq.q8": "Can I receive the money in my home country bank account?",
     "faq.a8": "Yes, the payment will be remitted internationally directly to your personal bank account.",
     "faq.q9": "It has already been over 2 years since I left Japan.",
-    "faq.a9": "Unfortunately, applications are strictly not accepted if more than 2 years have passed. We recommend applying as early as possible.",
+    "faq.a9": "Unfortunately, applications are strictly not accepted if more than 2 years have passed. We strongly recommend applying as early as possible.",
     "faq.q10": "What is the difference between Employees' Pension and National Pension?",
-    "faq.a10": "Generally, company employees are enrolled in the Employees' Pension (Kosei Nenkin), while self-employed individuals and some part-timers are enrolled in the National Pension (Kokumin Nenkin)."
+    "faq.a10": "Generally, company employees are enrolled in the Employees' Pension (Kosei Nenkin), while self-employed individuals and some part-timers are enrolled in the National Pension (Kokumin Nenkin). Note that 20.42% income tax is withheld when receiving the Employees' Pension lump-sum, but this can be fully refunded by appointing a tax manager.",
+    
+    // Footer
+    "footer.blog": "Official Blog",
+    "footer.blog.coming": "Blog Coming Soon",
+    "footer.contact": "Contact",
+    "footer.rights": "All rights reserved."
   }
 };
 

@@ -24,4 +24,24 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - `pnpm --filter @workspace/api-server run dev` — run API server locally
 
+## Artifacts
+
+### nenkin-refund (TaxGo)
+- **Path**: `artifacts/nenkin-refund/`
+- **Preview path**: `/`
+- **Type**: react-vite (static, no backend)
+- **Description**: Multilingual homepage for Japanese pension withdrawal (탈퇴일시금) and income tax refund agency service
+- **Languages**: Korean (default), Japanese, English
+- **Key files**:
+  - `src/lib/i18n.ts` — all translations (ko/ja/en)
+  - `src/pages/home.tsx` — main one-page layout
+  - `src/pages/faq.tsx` — FAQ separate page
+  - `src/components/calculator.tsx` — 후생연금/국민연금 calculator
+  - `src/components/layout/Navbar.tsx` — sticky nav with language switcher
+  - `src/components/layout/Footer.tsx` — footer with contact info & blog links
+  - `public/robots.txt`, `public/sitemap.xml` — SEO files
+- **Contact**: KakaoTalk: j-tax, Email: nouzeidaikou@gmail.com, X: @nouzeidaikou
+- **Blog links**: Korean → https://blog.naver.com/nouzeidaikou, Japanese/English → 준비중
+- **Google Form**: Placeholder URL `https://forms.gle/PLACEHOLDER` — replace with real link
+
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.

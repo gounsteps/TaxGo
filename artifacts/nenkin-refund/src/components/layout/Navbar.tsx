@@ -32,7 +32,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <span className="font-bold text-xl tracking-tight text-primary">Nouzeidaikou</span>
+            <span className="font-bold text-xl tracking-tight text-primary">TaxGo</span>
           </Link>
           <nav className="hidden md:flex gap-6">
             <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">

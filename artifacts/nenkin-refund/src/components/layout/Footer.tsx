@@ -11,21 +11,27 @@ export function Footer() {
     });
   }, []);
 
-  const getBlogLink = () => {
+  const getBlogContent = () => {
     switch (lang) {
-      case "ko": return "https://blog.naver.com/nouzeidaikou/222967289174";
-      case "ja": return "https://blog.example.com/ja";
-      case "en": return "https://blog.example.com/en";
-      default: return "https://blog.naver.com/nouzeidaikou/222967289174";
+      case "ko":
+        return { href: "https://blog.naver.com/nouzeidaikou", label: t("footer.blog"), isLink: true };
+      case "ja":
+        return { href: null, label: t("footer.blog.coming"), isLink: false };
+      case "en":
+        return { href: null, label: t("footer.blog.coming"), isLink: false };
+      default:
+        return { href: "https://blog.naver.com/nouzeidaikou", label: t("footer.blog"), isLink: true };
     }
   };
+
+  const blog = getBlogContent();
 
   return (
     <footer className="bg-muted py-12 border-t">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-bold text-lg mb-4 text-foreground">Nouzeidaikou</h3>
+            <h3 className="font-bold text-lg mb-4 text-foreground">TaxGo</h3>
             <p className="text-sm text-muted-foreground max-w-xs">
               {t("seo.home.description")}
             </p>
@@ -45,9 +51,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href={getBlogLink()} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  {t("footer.blog")}
-                </a>
+                {blog.isLink && blog.href ? (
+                  <a href={blog.href} target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    {blog.label}
+                  </a>
+                ) : (
+                  <span className="text-sm text-muted-foreground/60 italic">{blog.label}</span>
+                )}
               </li>
             </ul>
           </div>
@@ -55,16 +65,24 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4 text-foreground">{t("footer.contact")}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>KakaoTalk: @nouzeidaikou</li>
-              <li>Email: nouzeidaikou@gmail.com</li>
-              <li>X (Twitter): @nouzeidaikou</li>
+              <li>KakaoTalk: j-tax</li>
+              <li>
+                <a href="mailto:nouzeidaikou@gmail.com" className="hover:text-foreground transition-colors">
+                  Email: nouzeidaikou@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/nouzeidaikou" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                  X (Twitter): @nouzeidaikou
+                </a>
+              </li>
             </ul>
           </div>
         </div>
         
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Nouzeidaikou. {t("footer.rights")}
+            © {new Date().getFullYear()} TaxGo. {t("footer.rights")}
           </p>
         </div>
       </div>

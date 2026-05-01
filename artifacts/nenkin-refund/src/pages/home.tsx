@@ -26,7 +26,7 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Nouzeidaikou",
+    "name": "TaxGo",
     "description": t("seo.home.description"),
     "url": "https://yourdomain.com",
     "contactPoint": {
@@ -272,15 +272,15 @@ export default function Home() {
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-primary-foreground/80 border-t border-primary-foreground/20 pt-10">
               <div>
                 <span className="block font-semibold mb-1">KakaoTalk</span>
-                @nouzeidaikou
+                j-tax
               </div>
               <div>
                 <span className="block font-semibold mb-1">Email</span>
-                nouzeidaikou@gmail.com
+                <a href="mailto:nouzeidaikou@gmail.com" className="hover:underline">nouzeidaikou@gmail.com</a>
               </div>
               <div>
                 <span className="block font-semibold mb-1">X (Twitter)</span>
-                @nouzeidaikou
+                <a href="https://x.com/nouzeidaikou" target="_blank" rel="noopener noreferrer" className="hover:underline">@nouzeidaikou</a>
               </div>
             </div>
           </motion.div>
