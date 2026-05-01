@@ -23,7 +23,7 @@ export const translations: TranslationStore = {
     "nav.apply": "지금 신청하기",
 
     // Hero
-    "hero.hook": "복잡한 일본 연금 환급, 이미 수많은 분들이 저희(TaxGo)를 선택했습니다",
+    "hero.hook": "일본 후생연금의 탈퇴일시금 신청부터 소득세 환급까지, 이미 수많은 분들이 저희(TaxGo)를 선택했습니다",
     "hero.quote": "탈퇴일시금과 소득세 환급, 풍부한 실적으로 증명된 저희에게 맡기세요.",
     "hero.sub": "탈퇴일시금의 20%에 달하는 소득세를 환급받으려면, 일본 거주 중인 '납세관리인'을 반드시 지정해야 합니다. 수많은 신청을 대행해 온 경험으로 빠르고 정확하게 처리해 드리며, 돌려받아야 할 세금 단 1엔까지 빠짐없이 찾아드립니다.",
     "hero.cta": "지금 신청하기",
@@ -150,7 +150,7 @@ export const translations: TranslationStore = {
     "nav.apply": "今すぐ申し込む",
 
     // Hero
-    "hero.hook": "複雑な日本の年金還付、すでに数多くの方がTaxGoを選んでいます",
+    "hero.hook": "厚生年金の脱退一時金申請から所得税還付まで、すでに数多くの方がTaxGoを選んでいます",
     "hero.quote": "脱退一時金と所得税還付は、豊富な実績で証明された私たちにお任せください。",
     "hero.sub": "脱退一時金の20%に相当する所得税の還付を受けるには、日本在住の「納税管理人」を必ず指定する必要があります。数多くの申請を代行してきた経験で、迅速かつ正確に手続きを進め、取り戻すべき税金を1円たりとも漏らさずお手元にお届けします。",
     "hero.cta": "今すぐ申し込む",
@@ -277,7 +277,7 @@ export const translations: TranslationStore = {
     "nav.apply": "Apply Now",
 
     // Hero
-    "hero.hook": "Complex Japan Pension Refunds — Already Chosen by Countless Clients at TaxGo",
+    "hero.hook": "From Japan Employees' Pension Lump-sum Withdrawal to Income Tax Refund — Already Chosen by Countless Clients at TaxGo",
     "hero.quote": "For lump-sum withdrawals and income tax refunds, trust us — proven by our track record.",
     "hero.sub": "To claim the 20% income tax withheld from your lump-sum withdrawal, you are legally required to designate a resident 'Tax Agent' in Japan. With our experience handling countless applications, we process everything quickly and accurately — ensuring not a single yen of what you're owed goes unclaimed.",
     "hero.cta": "Apply Now",
