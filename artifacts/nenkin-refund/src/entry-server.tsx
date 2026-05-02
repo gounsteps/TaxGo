@@ -5,13 +5,18 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import Home from "@/pages/home";
 import FAQ from "@/pages/faq";
+import { setSSRLanguage } from "@/lib/i18n";
+import type { Language } from "@/lib/i18n";
 
 export interface RenderResult {
   appHtml: string;
 }
 
-export async function render(url: string): Promise<RenderResult> {
-  const Component = url.startsWith("/faq") ? FAQ : Home;
+export async function render(url: string, lang: Language = "ko"): Promise<RenderResult> {
+  setSSRLanguage(lang);
+
+  const isFaq = url.includes("/faq");
+  const Component = isFaq ? FAQ : Home;
 
   const appHtml = renderToString(
     <TooltipProvider>

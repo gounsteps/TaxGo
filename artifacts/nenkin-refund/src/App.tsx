@@ -6,10 +6,29 @@ import Home from "@/pages/home";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { useEffect, useState, lazy, Suspense } from "react";
-import { subscribeLanguage, getLanguage } from "@/lib/i18n";
+import { subscribeLanguage, getLanguage, setLanguage, Language } from "@/lib/i18n";
 
 const FAQ = lazy(() => import("@/pages/faq"));
 const NotFound = lazy(() => import("@/pages/not-found"));
+
+function makeLangHome(lang: Language) {
+  return function LangHomePage() {
+    useEffect(() => { setLanguage(lang); }, []);
+    return <Home />;
+  };
+}
+
+function makeLangFAQ(lang: Language) {
+  return function LangFAQPage() {
+    useEffect(() => { setLanguage(lang); }, []);
+    return <FAQ />;
+  };
+}
+
+const JaHome = makeLangHome("ja");
+const EnHome = makeLangHome("en");
+const JaFAQ = makeLangFAQ("ja");
+const EnFAQ = makeLangFAQ("en");
 
 function Router() {
   return (
@@ -20,6 +39,10 @@ function Router() {
           <Switch>
             <Route path="/" component={Home} />
             <Route path="/faq" component={FAQ} />
+            <Route path="/ja" component={JaHome} />
+            <Route path="/ja/faq" component={JaFAQ} />
+            <Route path="/en" component={EnHome} />
+            <Route path="/en/faq" component={EnFAQ} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>

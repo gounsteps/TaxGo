@@ -22,46 +22,91 @@ const BASE_TEMPLATE = fs.readFileSync(
 
 const SITE = "https://taxgo.jp";
 
+const HREFLANG_HOME = [
+  { lang: "ko", href: `${SITE}/` },
+  { lang: "ja", href: `${SITE}/ja/` },
+  { lang: "en", href: `${SITE}/en/` },
+  { lang: "x-default", href: `${SITE}/` },
+];
+
+const HREFLANG_FAQ = [
+  { lang: "ko", href: `${SITE}/faq` },
+  { lang: "ja", href: `${SITE}/ja/faq` },
+  { lang: "en", href: `${SITE}/en/faq` },
+  { lang: "x-default", href: `${SITE}/faq` },
+];
+
 const routes = [
   {
     url: "/",
+    lang: "ko",
     outputDir: distPublic,
     title: "일본 탈퇴일시금·소득세 환급 대행 | TaxGo",
-    description:
-      "일본 후생연금 탈퇴일시금 신청 및 소득세(20.42%) 환급 대행. 납세관리인 대행까지 원스톱 서비스.",
-    keywords:
-      "탈퇴일시금, 탈퇴일시금 대행, 일본 연금 환급, 소득세 환급, 납세관리인, 일본 연금 탈퇴, 환급 대행, TaxGo, 脱退一時金, 所得税還付",
+    description: "일본 후생연금 탈퇴일시금 신청 및 소득세(20.42%) 환급 대행. 납세관리인 대행까지 원스톱 서비스.",
+    keywords: "탈퇴일시금, 탈퇴일시금 대행, 일본 연금 환급, 소득세 환급, 납세관리인, 일본 연금 탈퇴, 환급 대행, TaxGo, 脱退一時金, 所得税還付",
     canonical: `${SITE}/`,
     ogUrl: `${SITE}/`,
-    hreflang: [
-      { lang: "ko", href: `${SITE}/` },
-      { lang: "ja", href: `${SITE}/?lang=ja` },
-      { lang: "en", href: `${SITE}/?lang=en` },
-      { lang: "x-default", href: `${SITE}/` },
-    ],
+    hreflang: HREFLANG_HOME,
   },
   {
     url: "/faq",
+    lang: "ko",
     outputDir: path.join(distPublic, "faq"),
     title: "자주 묻는 질문 | 탈퇴일시금·소득세 환급 대행 TaxGo",
-    description:
-      "탈퇴일시금 신청 기간, 수령 금액, 소득세 환급, 납세관리인 선임 등 자주 묻는 질문을 확인하세요. 일본 귀국 후 2년 이내 신청 가능.",
-    keywords:
-      "탈퇴일시금 FAQ, 탈퇴일시금 신청방법, 소득세 환급 방법, 납세관리인, 일본 연금 질문, 탈퇴일시금 기간",
+    description: "탈퇴일시금 신청 기간, 수령 금액, 소득세 환급, 납세관리인 선임 등 자주 묻는 질문을 확인하세요. 일본 귀국 후 2년 이내 신청 가능.",
+    keywords: "탈퇴일시금 FAQ, 탈퇴일시금 신청방법, 소득세 환급 방법, 납세관리인, 일본 연금 질문, 탈퇴일시금 기간",
     canonical: `${SITE}/faq`,
     ogUrl: `${SITE}/faq`,
-    hreflang: [
-      { lang: "ko", href: `${SITE}/faq` },
-      { lang: "ja", href: `${SITE}/faq?lang=ja` },
-      { lang: "en", href: `${SITE}/faq?lang=en` },
-      { lang: "x-default", href: `${SITE}/faq` },
-    ],
+    hreflang: HREFLANG_FAQ,
+  },
+  {
+    url: "/ja",
+    lang: "ja",
+    outputDir: path.join(distPublic, "ja"),
+    title: "脱退一時金・所得税還付代行【実績多数】| TaxGo",
+    description: "厚生年金 脱退一時金申請・所得税（20.42%）還付代行。納税管理人代行まで一括サポート。",
+    keywords: "脱退一時金, 脱退一時金代行, 所得税還付, 源泉徴収 還付, 納税管理人, 年金 外国人 帰国, 脱退一時金 申請代行, TaxGo",
+    canonical: `${SITE}/ja/`,
+    ogUrl: `${SITE}/ja/`,
+    hreflang: HREFLANG_HOME,
+  },
+  {
+    url: "/ja/faq",
+    lang: "ja",
+    outputDir: path.join(distPublic, "ja", "faq"),
+    title: "よくある質問 | 脱退一時金・所得税還付代行 TaxGo",
+    description: "脱退一時金の申請期限・受給額・所得税還付・納税管理人についてよくある質問をご確認ください。帰国後2年以内に申請可能。",
+    keywords: "脱退一時金 FAQ, 脱退一時金 申請方法, 所得税還付 方法, 納税管理人, 年金 外国人 質問, 脱退一時金 期限",
+    canonical: `${SITE}/ja/faq`,
+    ogUrl: `${SITE}/ja/faq`,
+    hreflang: HREFLANG_FAQ,
+  },
+  {
+    url: "/en",
+    lang: "en",
+    outputDir: path.join(distPublic, "en"),
+    title: "Japan Pension Lump-sum Withdrawal & Tax Refund Agency | TaxGo",
+    description: "Japan Employees' Pension Lump-sum Withdrawal and income tax (20.42%) refund agency. Tax Agent (Nouzei Kanrinin) representation included. One-stop service.",
+    keywords: "Japan pension refund, lump-sum withdrawal, Japan income tax refund, 脱退一時金, pension withdrawal agency, Japan tax agent, withholding tax refund Japan, TaxGo",
+    canonical: `${SITE}/en/`,
+    ogUrl: `${SITE}/en/`,
+    hreflang: HREFLANG_HOME,
+  },
+  {
+    url: "/en/faq",
+    lang: "en",
+    outputDir: path.join(distPublic, "en", "faq"),
+    title: "FAQ | Japan Pension Lump-sum Withdrawal & Tax Refund — TaxGo",
+    description: "FAQ on Japan pension lump-sum withdrawal: eligibility, deadlines, refund amounts, income tax refund, and tax agent requirements. Apply within 2 years of leaving Japan.",
+    keywords: "Japan pension FAQ, lump-sum withdrawal questions, Japan income tax refund FAQ, tax agent Japan, pension withdrawal eligibility",
+    canonical: `${SITE}/en/faq`,
+    ogUrl: `${SITE}/en/faq`,
+    hreflang: HREFLANG_FAQ,
   },
 ];
 
 /**
  * Extract <script type="application/ld+json">...</script> blocks from HTML string.
- * Returns { jsonLdBlocks: string[], remaining: string }
  */
 function extractJsonLd(html) {
   const jsonLdBlocks = [];
@@ -77,7 +122,6 @@ function extractJsonLd(html) {
 
 /**
  * Strip meta/title/link tags that React 19 injects into the body.
- * These duplicate what's already in <head>.
  */
 function stripInlineHeadTags(html) {
   return html
@@ -118,49 +162,32 @@ ${hreflangTags}
 }
 
 for (const route of routes) {
-  console.log(`Pre-rendering: ${route.url}`);
+  console.log(`Pre-rendering: ${route.url} [${route.lang}]`);
 
   let result;
   try {
-    result = await render(route.url);
+    result = await render(route.url, route.lang);
   } catch (err) {
     console.error(`  ✗ Render failed for ${route.url}:`, err.message);
     console.error(err.stack);
     process.exit(1);
   }
 
-  // 1. Extract JSON-LD from rendered body
-  const { jsonLdBlocks, remaining: appHtmlWithoutJsonLd } = extractJsonLd(
-    result.appHtml
-  );
-
-  // 2. Strip duplicate meta/title/link tags React 19 injects into body
+  const { jsonLdBlocks, remaining: appHtmlWithoutJsonLd } = extractJsonLd(result.appHtml);
   const cleanAppHtml = stripInlineHeadTags(appHtmlWithoutJsonLd);
-
-  // 3. Build route-specific head additions
   const headAdditions = buildHead(route, jsonLdBlocks);
 
-  // 4. Remove the static title/description/canonical from the base template
-  //    (we replace them with route-specific ones via <!--app-head-->)
   let html = BASE_TEMPLATE
-    // Remove static title (replaced below)
     .replace(/<title>[^<]*<\/title>/, "")
-    // Remove static description
     .replace(/<meta\s+name="description"[^>]*>/, "")
-    // Remove static keywords
     .replace(/<meta\s+name="keywords"[^>]*>/, "")
-    // Remove static canonical
     .replace(/<link\s+rel="canonical"[^>]*>/, "")
-    // Remove static og:url / og:title / og:description
     .replace(/<meta\s+property="og:url"[^>]*>/, "")
     .replace(/<meta\s+property="og:title"[^>]*>/, "")
     .replace(/<meta\s+property="og:description"[^>]*>/, "")
-    // Remove static twitter:title / twitter:description
     .replace(/<meta\s+name="twitter:title"[^>]*>/, "")
     .replace(/<meta\s+name="twitter:description"[^>]*>/, "")
-    // Inject route-specific head content
     .replace("<!--app-head-->", headAdditions)
-    // Inject pre-rendered body
     .replace("<!--app-html-->", cleanAppHtml);
 
   fs.mkdirSync(route.outputDir, { recursive: true });

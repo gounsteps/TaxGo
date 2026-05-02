@@ -26,8 +26,9 @@ export default function FAQ() {
   }));
 
   const origin = typeof window !== "undefined" ? window.location.origin : "https://taxgo.jp";
+  const langPath = lang === "ko" ? "" : `/${lang}`;
   const faqUrl = `${origin}/faq`;
-  const canonicalUrl = lang === "ko" ? faqUrl : `${faqUrl}?lang=${lang}`;
+  const canonicalUrl = `${origin}${langPath}/faq`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -53,12 +54,12 @@ export default function FAQ() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <link rel="alternate" hrefLang="ko" href={faqUrl} />
-        <link rel="alternate" hrefLang="ja" href={`${faqUrl}?lang=ja`} />
-        <link rel="alternate" hrefLang="en" href={`${faqUrl}?lang=en`} />
+        <link rel="alternate" hrefLang="ja" href={`${origin}/ja/faq`} />
+        <link rel="alternate" hrefLang="en" href={`${origin}/en/faq`} />
         <link rel="alternate" hrefLang="x-default" href={faqUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="TaxGo" />
-        <meta property="og:url" content={faqUrl} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={t("seo.faq.title")} />
         <meta property="og:description" content={t("seo.faq.description")} />
         <meta property="og:locale" content={lang === "ko" ? "ko_KR" : lang === "ja" ? "ja_JP" : "en_US"} />

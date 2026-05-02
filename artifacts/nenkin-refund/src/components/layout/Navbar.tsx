@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { t, setLanguage, getLanguage, Language, subscribeLanguage } from "@/lib/i18n";
 import { useEffect, useState } from "react";
@@ -14,6 +14,12 @@ function getFormUrl(lang: Language): string {
   return "https://forms.gle/ceB3RKYqajPuHJf3A";
 }
 
+function getLangPrefix(lang: Language): string {
+  if (lang === "ja") return "/ja";
+  if (lang === "en") return "/en";
+  return "";
+}
+
 const LANG_LABELS: { value: Language; label: string }[] = [
   { value: "ko", label: "ko" },
   { value: "ja", label: "jp" },
@@ -21,13 +27,23 @@ const LANG_LABELS: { value: Language; label: string }[] = [
 ];
 
 function LangSwitcher({ lang }: { lang: Language }) {
+  const [location, navigate] = useLocation();
+
+  const switchTo = (targetLang: Language) => {
+    const isFaq = location.includes("/faq");
+    const prefix = getLangPrefix(targetLang);
+    const path = isFaq ? `${prefix}/faq` : (prefix || "/");
+    setLanguage(targetLang);
+    navigate(path);
+  };
+
   return (
     <div className="flex items-center gap-1 text-sm font-medium" data-testid="select-language">
       {LANG_LABELS.map(({ value, label }, i) => (
         <span key={value} className="flex items-center gap-1">
           {i > 0 && <span className="text-slate-300 select-none">·</span>}
           <button
-            onClick={() => setLanguage(value)}
+            onClick={() => switchTo(value)}
             className={`px-1 py-0.5 rounded transition-colors ${
               lang === value
                 ? "text-primary font-bold"
@@ -52,18 +68,22 @@ export function Navbar() {
     });
   }, []);
 
+  const prefix = getLangPrefix(lang);
+  const homeHref = prefix || "/";
+  const faqHref = `${prefix}/faq`;
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={homeHref} className="flex items-center gap-2">
             <span className="font-bold text-xl tracking-tight text-primary">TaxGo</span>
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <Link href={homeHref} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {t("nav.home")}
             </Link>
-            <Link href="/faq" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <Link href={faqHref} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {t("nav.faq")}
             </Link>
             <a href={getBlogUrl(lang)} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
@@ -94,10 +114,10 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t bg-background p-4 flex flex-col gap-4 shadow-lg absolute w-full left-0">
           <nav className="flex flex-col gap-4">
-            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-base font-medium">
+            <Link href={homeHref} onClick={() => setMobileMenuOpen(false)} className="text-base font-medium">
               {t("nav.home")}
             </Link>
-            <Link href="/faq" onClick={() => setMobileMenuOpen(false)} className="text-base font-medium">
+            <Link href={faqHref} onClick={() => setMobileMenuOpen(false)} className="text-base font-medium">
               {t("nav.faq")}
             </Link>
             <a href={getBlogUrl(lang)} target="_blank" rel="noopener noreferrer" className="text-base font-medium" onClick={() => setMobileMenuOpen(false)}>
