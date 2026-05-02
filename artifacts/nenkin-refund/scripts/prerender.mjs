@@ -40,6 +40,8 @@ const routes = [
   {
     url: "/",
     lang: "ko",
+    htmlLang: "ko",
+    ogLocale: "ko_KR",
     outputDir: distPublic,
     title: "일본 탈퇴일시금·소득세 환급 대행 | TaxGo",
     description: "일본 후생연금 탈퇴일시금 신청 및 소득세(20.42%) 환급 대행. 납세관리인 대행까지 원스톱 서비스.",
@@ -51,6 +53,8 @@ const routes = [
   {
     url: "/faq",
     lang: "ko",
+    htmlLang: "ko",
+    ogLocale: "ko_KR",
     outputDir: path.join(distPublic, "faq"),
     title: "자주 묻는 질문 | 탈퇴일시금·소득세 환급 대행 TaxGo",
     description: "탈퇴일시금 신청 기간, 수령 금액, 소득세 환급, 납세관리인 선임 등 자주 묻는 질문을 확인하세요. 일본 귀국 후 2년 이내 신청 가능.",
@@ -62,6 +66,8 @@ const routes = [
   {
     url: "/ja",
     lang: "ja",
+    htmlLang: "ja",
+    ogLocale: "ja_JP",
     outputDir: path.join(distPublic, "ja"),
     title: "脱退一時金・所得税還付代行【実績多数】| TaxGo",
     description: "厚生年金 脱退一時金申請・所得税（20.42%）還付代行。納税管理人代行まで一括サポート。",
@@ -73,6 +79,8 @@ const routes = [
   {
     url: "/ja/faq",
     lang: "ja",
+    htmlLang: "ja",
+    ogLocale: "ja_JP",
     outputDir: path.join(distPublic, "ja", "faq"),
     title: "よくある質問 | 脱退一時金・所得税還付代行 TaxGo",
     description: "脱退一時金の申請期限・受給額・所得税還付・納税管理人についてよくある質問をご確認ください。帰国後2年以内に申請可能。",
@@ -84,6 +92,8 @@ const routes = [
   {
     url: "/en",
     lang: "en",
+    htmlLang: "en",
+    ogLocale: "en_US",
     outputDir: path.join(distPublic, "en"),
     title: "Japan Pension Lump-sum Withdrawal & Tax Refund Agency | TaxGo",
     description: "Japan Employees' Pension Lump-sum Withdrawal and income tax (20.42%) refund agency. Tax Agent (Nouzei Kanrinin) representation included. One-stop service.",
@@ -95,6 +105,8 @@ const routes = [
   {
     url: "/en/faq",
     lang: "en",
+    htmlLang: "en",
+    ogLocale: "en_US",
     outputDir: path.join(distPublic, "en", "faq"),
     title: "FAQ | Japan Pension Lump-sum Withdrawal & Tax Refund — TaxGo",
     description: "FAQ on Japan pension lump-sum withdrawal: eligibility, deadlines, refund amounts, income tax refund, and tax agent requirements. Apply within 2 years of leaving Japan.",
@@ -157,6 +169,7 @@ ${hreflangTags}
     <meta property="og:url" content="${route.ogUrl}" />
     <meta property="og:title" content="${route.title}" />
     <meta property="og:description" content="${route.description}" />
+    <meta property="og:locale" content="${route.ogLocale}" />
     <meta name="twitter:title" content="${route.title}" />
     <meta name="twitter:description" content="${route.description}" />${jsonLd}`;
 }
@@ -178,6 +191,10 @@ for (const route of routes) {
   const headAdditions = buildHead(route, jsonLdBlocks);
 
   let html = BASE_TEMPLATE
+    // Fix <html lang> attribute
+    .replace(/(<html[^>]*)\slang="[^"]*"/, `$1 lang="${route.htmlLang}"`)
+    // Fix og:locale (remove all existing og:locale tags, inject correct one via buildHead)
+    .replace(/<meta\s+property="og:locale(?::alternate)?"[^>]*>/g, "")
     .replace(/<title>[^<]*<\/title>/, "")
     .replace(/<meta\s+name="description"[^>]*>/, "")
     .replace(/<meta\s+name="keywords"[^>]*>/, "")
