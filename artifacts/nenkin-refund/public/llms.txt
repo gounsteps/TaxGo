@@ -1,0 +1,76 @@
+# TaxGo — 일본 탈퇴일시금·소득세 환급 대행 서비스
+
+> 일본 후생연금 탈퇴일시금 신청부터 소득세(20.42%) 전액 환급까지, 납세관리인 선임을 포함한 원스톱 대행 서비스.
+
+## 서비스 개요
+
+TaxGo는 일본에서 취업 후 귀국한 외국인을 위해 다음 두 가지 절차를 대행합니다.
+
+1. **탈퇴일시금(脱退一時金) 신청 대행** — 일본 후생연금·국민연금에 6개월 이상 가입한 외국인이 출국 후 2년 이내에 신청할 수 있는 일시금 환급 제도.
+2. **소득세 환급(所得税還付) 대행** — 탈퇴일시금 수령 시 원천징수되는 20.42%의 소득세를 돌려받기 위해 일본 현지 납세관리인 선임이 필수이며, TaxGo가 이를 포함해 전액 환급 절차를 대행.
+
+## 주요 특징
+
+- 납세관리인 선임 포함 원스톱 처리
+- 수많은 실적으로 검증된 신뢰도
+- 한국어·일본어·영어 대응
+- 신청 기한: 일본 출국일로부터 **2년 이내**
+
+## 자주 묻는 질문 (Q&A)
+
+**Q: 탈퇴일시금이란 무엇인가요?**
+A: 일본 후생연금·국민연금에 6개월 이상 가입한 외국인이 일본을 출국한 후 2년 이내에 납부한 보험료의 일부를 돌려받을 수 있는 제도입니다.
+
+**Q: 신청 기한은 언제까지인가요?**
+A: 일본 출국일(주민표 제외일)로부터 2년 이내에 신청해야 합니다.
+
+**Q: 소득세 20.42%는 왜 공제되나요?**
+A: 탈퇴일시금 수령 시 일본 세법에 따라 20.42%의 소득세가 원천징수됩니다. 이는 일본 현지 납세관리인을 통한 확정신고로 전액 환급받을 수 있습니다.
+
+**Q: 납세관리인이란 무엇인가요?**
+A: 비거주자인 외국인을 대신해 일본 세무서에 세금 신고를 담당하는 일본 현지 대리인입니다. 소득세 환급에는 반드시 납세관리인 선임이 필요합니다.
+
+**Q: 한국에서도 신청할 수 있나요?**
+A: 네. TaxGo가 일본 현지에서 납세관리인을 대신 선임하고 모든 절차를 대행하므로, 한국에 계신 채로 신청 가능합니다.
+
+**Q: 수령 금액은 얼마나 되나요?**
+A: 가입 기간과 납부 보험료에 따라 다릅니다. 일반적으로 수개월~수년치 보험료가 반환되며, 소득세 환급분을 합산하면 상당한 금액이 됩니다.
+
+## 언어별 페이지
+
+- 한국어: https://taxgo.jp/
+- 日本語: https://taxgo.jp/ja/
+- English: https://taxgo.jp/en/
+- 한국어 FAQ: https://taxgo.jp/faq
+- 日本語 FAQ: https://taxgo.jp/ja/faq
+- English FAQ: https://taxgo.jp/en/faq
+
+## 연락처 및 채널
+
+- 이메일: nouzeidaikou@gmail.com
+- 카카오톡: j-tax
+- X (트위터): @nouzeidaikou — https://x.com/nouzeidaikou
+- 네이버 블로그: https://blog.naver.com/nouzeidaikou
+- Note (일본어): https://note.com/texgo
+
+---
+
+## TaxGo — 脱退一時金・所得税還付代行サービス (Japanese)
+
+TaxGoは、帰国した外国人のために以下の手続きを代行します。
+
+- **脱退一時金申請代行**: 厚生年金・国民年金に6ヶ月以上加入した外国人が帰国後2年以内に申請可能。
+- **所得税還付代行**: 脱退一時金受給時に源泉徴収される20.42%の所得税を、納税管理人を通じて全額還付。
+
+**お問い合わせ**: nouzeidaikou@gmail.com / KakaoTalk: j-tax
+
+---
+
+## TaxGo — Japan Pension Lump-sum Withdrawal & Tax Refund Agency (English)
+
+TaxGo handles two key procedures for foreign nationals who have left Japan:
+
+- **Lump-sum Withdrawal (脱退一時金)**: Available to those enrolled in Japan's Employees' Pension for 6+ months. Must be claimed within 2 years of leaving Japan.
+- **Income Tax Refund**: 20.42% withholding tax on the lump-sum is fully refundable via a designated Tax Agent (Nouzei Kanrinin). TaxGo includes Tax Agent representation in its service.
+
+**Contact**: nouzeidaikou@gmail.com / KakaoTalk: j-tax

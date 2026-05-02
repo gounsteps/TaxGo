@@ -61,6 +61,18 @@ export default function Home() {
       "url": baseUrl,
       "inLanguage": ["ko", "ja", "en"],
       "description": t("seo.home.description")
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "TaxGo",
+          "item": `${baseUrl}/`
+        }
+      ]
     }
   ];
 

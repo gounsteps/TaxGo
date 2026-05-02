@@ -30,18 +30,38 @@ export default function FAQ() {
   const faqUrl = `${origin}/faq`;
   const canonicalUrl = `${origin}${langPath}/faq`;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": t(faq.q),
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": t(faq.a)
-      }
-    }))
-  };
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": t(faq.q),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t(faq.a)
+        }
+      }))
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "TaxGo",
+          "item": `${origin}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": t("nav.faq"),
+          "item": canonicalUrl
+        }
+      ]
+    }
+  ];
 
   return (
     <>
