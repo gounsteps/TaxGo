@@ -283,7 +283,8 @@ export const translations: TranslationStore = {
 
     // Hero
     "hero.hook": "End-to-End Support for Japanese Pension Lump-sum Withdrawals and Income Tax Refunds — Already Chosen by Countless Clients at TaxGo",
-    "hero.hook.highlight": "End-to-End Support for Japanese Pension Lump-sum Withdrawals and Income Tax Refunds",
+    "hero.hook.part1": "End-to-End Support for ",
+    "hero.hook.highlight": "Japanese Pension Lump-sum Withdrawals and Income Tax Refunds",
     "hero.hook.part3": " — Already Chosen by Countless Clients at TaxGo",
     "hero.quote": "For lump-sum withdrawals and income tax refunds, trust us — proven by our track record.",
     "hero.sub": "To claim the 20% income tax withheld from your lump-sum withdrawal, you are legally required to designate a resident 'Tax Agent' in Japan. With our experience handling countless applications, we process everything quickly and accurately — ensuring not a single yen of what you're owed goes unclaimed.",
