@@ -30,7 +30,20 @@
     <meta name="twitter:description" content="일본 후생연금 탈퇴일시금 신청 및 소득세(20.42%) 환급 대행. 납세관리인 대행까지 원스톱 서비스." />
     <meta name="twitter:image" content="https://taxgo.jp/opengraph.jpg" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+    // Restore path from GitHub Pages 404 redirect
+    (function() {
+      var q = window.location.search;
+      if (q && q.indexOf('?p=') === 0) {
+        var decoded = decodeURIComponent(q.slice(3).replace(/&h=.*$/, ''));
+        var hash = q.match(/&h=([^&]*)/);
+        window.history.replaceState(null, null,
+          decoded + (hash ? decodeURIComponent(hash[1]) : '')
+        );
+      }
+    })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">

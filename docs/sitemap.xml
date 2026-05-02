@@ -3,16 +3,10 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://taxgo.jp/</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://taxgo.jp/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://taxgo.jp/" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://taxgo.jp/?lang=ja" />
     <xhtml:link rel="alternate" hreflang="en" href="https://taxgo.jp/?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://taxgo.jp/" />
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://taxgo.jp/?lang=ko</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -31,7 +25,7 @@
   </url>
   <url>
     <loc>https://taxgo.jp/faq</loc>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://taxgo.jp/faq?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://taxgo.jp/faq" />
     <xhtml:link rel="alternate" hreflang="ja" href="https://taxgo.jp/faq?lang=ja" />
     <xhtml:link rel="alternate" hreflang="en" href="https://taxgo.jp/faq?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://taxgo.jp/faq" />
