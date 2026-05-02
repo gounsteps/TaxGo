@@ -13,7 +13,7 @@ if (!fs.existsSync(serverEntry)) {
   process.exit(1);
 }
 
-const { render } = await import(serverEntry);
+const { render, translations } = await import(serverEntry);
 
 const BASE_TEMPLATE = fs.readFileSync(
   path.resolve(distPublic, "index.html"),
@@ -118,22 +118,123 @@ const routes = [
 ];
 
 /**
- * Extract <script type="application/ld+json">...</script> blocks from HTML string.
+ * Strip HTML tags and decode basic HTML entities.
+ * Google's FAQPage schema does not allow HTML in Answer text.
  */
-function extractJsonLd(html) {
-  const jsonLdBlocks = [];
-  const remaining = html.replace(
-    /<script\s+type="application\/ld\+json"[\s\S]*?<\/script>/gi,
-    (match) => {
-      jsonLdBlocks.push(match);
-      return "";
-    }
-  );
-  return { jsonLdBlocks, remaining };
+function stripHtml(html) {
+  return html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&apos;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 }
 
 /**
- * Strip meta/title/link tags that React 19 injects into the body.
+ * Build JSON-LD schemas directly from translations.
+ * This avoids React 19 hoisting/Helmet duplication on client hydration.
+ */
+function buildJsonLd(route) {
+  const isFaq = route.url.includes("/faq");
+  const t = translations[route.lang] || translations["ko"];
+
+  if (isFaq) {
+    const faqCount = parseInt(t["faq.count"] || "9", 10);
+    const mainEntity = Array.from({ length: faqCount }, (_, i) => ({
+      "@type": "Question",
+      name: stripHtml(t[`faq.q${i + 1}`] || ""),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: stripHtml(t[`faq.a${i + 1}`] || ""),
+      },
+    }));
+
+    const breadcrumbName =
+      route.lang === "ja" ? "よくある質問" : route.lang === "en" ? "FAQ" : "자주 묻는 질문";
+    const faqHomeUrl =
+      route.lang === "ja" ? `${SITE}/ja/` : route.lang === "en" ? `${SITE}/en/` : `${SITE}/`;
+    const faqPageUrl = route.canonical;
+
+    const schemas = [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity,
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "TaxGo", item: faqHomeUrl },
+          { "@type": "ListItem", position: 2, name: breadcrumbName, item: faqPageUrl },
+        ],
+      },
+    ];
+
+    return schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join("\n    ");
+  } else {
+    const homeDesc =
+      route.lang === "ja"
+        ? "厚生年金 脱退一時金申請・所得税（20.42%）還付代行。納税管理人代行まで一括サポート。"
+        : route.lang === "en"
+        ? "Japan Employees' Pension Lump-sum Withdrawal and income tax (20.42%) refund agency. Tax Agent included."
+        : "일본 후생연금 탈퇴일시금 신청 및 소득세(20.42%) 환급 대행. 납세관리인 대행까지 원스톱 서비스.";
+
+    const schemas = [
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        name: "TaxGo",
+        description: homeDesc,
+        url: SITE,
+        sameAs: [
+          "https://x.com/nouzeidaikou",
+          "https://blog.naver.com/nouzeidaikou",
+          "https://note.com/texgo",
+        ],
+        areaServed: ["KR", "JP"],
+        serviceType: [
+          "탈퇴일시금 대행",
+          "소득세 환급 대행",
+          "脱退一時金代行",
+          "所得税還付代行",
+        ],
+        knowsAbout: ["脱退一時金", "所得税還付", "납세관리인", "일본 연금 환급"],
+        inLanguage: ["ko", "ja", "en"],
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "nouzeidaikou@gmail.com",
+          contactType: "customer service",
+          availableLanguage: ["Korean", "Japanese"],
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "TaxGo",
+        url: SITE,
+        inLanguage: ["ko", "ja", "en"],
+        description: homeDesc,
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "TaxGo", item: route.canonical },
+        ],
+      },
+    ];
+
+    return schemas.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join("\n    ");
+  }
+}
+
+/**
+ * Strip meta/title/link tags that React 19 injects into the body during SSR.
  */
 function stripInlineHeadTags(html) {
   return html
@@ -142,13 +243,14 @@ function stripInlineHeadTags(html) {
     .replace(/<meta\s[^>]*>/gi, "")
     .replace(/<link\s+rel="canonical"[^>]*>/gi, "")
     .replace(/<link\s+rel="alternate"[^>]*>/gi, "")
-    .replace(/<link\s+rel="icon"[^>]*>/gi, "");
+    .replace(/<link\s+rel="icon"[^>]*>/gi, "")
+    .replace(/<script\s+type="application\/ld\+json"[\s\S]*?<\/script>/gi, "");
 }
 
 /**
  * Build the <head> section specific to this route.
  */
-function buildHead(route, jsonLdBlocks) {
+function buildHead(route) {
   const hreflangTags = route.hreflang
     .map(
       ({ lang, href }) =>
@@ -156,9 +258,7 @@ function buildHead(route, jsonLdBlocks) {
     )
     .join("\n");
 
-  const jsonLd = jsonLdBlocks.length
-    ? "\n    " + jsonLdBlocks.join("\n    ")
-    : "";
+  const jsonLdTags = buildJsonLd(route);
 
   return `
     <title>${route.title}</title>
@@ -171,7 +271,8 @@ ${hreflangTags}
     <meta property="og:description" content="${route.description}" />
     <meta property="og:locale" content="${route.ogLocale}" />
     <meta name="twitter:title" content="${route.title}" />
-    <meta name="twitter:description" content="${route.description}" />${jsonLd}`;
+    <meta name="twitter:description" content="${route.description}" />
+    ${jsonLdTags}`;
 }
 
 for (const route of routes) {
@@ -186,14 +287,11 @@ for (const route of routes) {
     process.exit(1);
   }
 
-  const { jsonLdBlocks, remaining: appHtmlWithoutJsonLd } = extractJsonLd(result.appHtml);
-  const cleanAppHtml = stripInlineHeadTags(appHtmlWithoutJsonLd);
-  const headAdditions = buildHead(route, jsonLdBlocks);
+  const cleanAppHtml = stripInlineHeadTags(result.appHtml);
+  const headAdditions = buildHead(route);
 
   let html = BASE_TEMPLATE
-    // Fix <html lang> attribute
     .replace(/(<html[^>]*)\slang="[^"]*"/, `$1 lang="${route.htmlLang}"`)
-    // Fix og:locale (remove all existing og:locale tags, inject correct one via buildHead)
     .replace(/<meta\s+property="og:locale(?::alternate)?"[^>]*>/g, "")
     .replace(/<title>[^<]*<\/title>/, "")
     .replace(/<meta\s+name="description"[^>]*>/, "")
@@ -211,9 +309,11 @@ for (const route of routes) {
   const outputFile = path.join(route.outputDir, "index.html");
   fs.writeFileSync(outputFile, html, "utf-8");
 
+  const isFaq = route.url.includes("/faq");
+  const schemaCount = isFaq ? 2 : 3;
   console.log(`  ✓ title: ${route.title}`);
   console.log(`  ✓ canonical: ${route.canonical}`);
-  console.log(`  ✓ JSON-LD blocks moved to <head>: ${jsonLdBlocks.length}`);
+  console.log(`  ✓ JSON-LD schemas injected: ${schemaCount} (${isFaq ? "FAQPage + BreadcrumbList" : "ProfessionalService + WebSite + BreadcrumbList"})`);
   console.log(`  ✓ Written: ${outputFile}`);
 }
 

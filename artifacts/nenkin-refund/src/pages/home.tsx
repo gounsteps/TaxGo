@@ -115,9 +115,6 @@ export default function Home() {
         <meta name="twitter:site" content="@nouzeidaikou" />
         <meta name="twitter:title" content={t("seo.home.title")} />
         <meta name="twitter:description" content={t("seo.home.description")} />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
       </Helmet>
 
       {/* Hero Section */}

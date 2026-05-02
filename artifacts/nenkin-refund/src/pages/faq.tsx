@@ -87,9 +87,6 @@ export default function FAQ() {
         <meta name="twitter:site" content="@nouzeidaikou" />
         <meta name="twitter:title" content={t("seo.faq.title")} />
         <meta name="twitter:description" content={t("seo.faq.description")} />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
       </Helmet>
 
       <div className="min-h-screen bg-slate-50 py-20">

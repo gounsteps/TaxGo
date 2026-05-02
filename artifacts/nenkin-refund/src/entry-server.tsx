@@ -5,8 +5,10 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import Home from "@/pages/home";
 import FAQ from "@/pages/faq";
-import { setSSRLanguage } from "@/lib/i18n";
+import { setSSRLanguage, translations } from "@/lib/i18n";
 import type { Language } from "@/lib/i18n";
+
+export { translations };
 
 export interface RenderResult {
   appHtml: string;
