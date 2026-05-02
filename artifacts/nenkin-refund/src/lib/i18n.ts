@@ -397,7 +397,21 @@ export const translations: TranslationStore = {
   }
 };
 
-let currentLang: Language = "ko";
+function detectInitialLang(): Language {
+  if (typeof window === "undefined") return "ko";
+  const urlLang = new URLSearchParams(window.location.search).get("lang");
+  if (urlLang === "ja" || urlLang === "ko" || urlLang === "en") return urlLang;
+  try {
+    const stored = localStorage.getItem("taxgo-lang");
+    if (stored === "ja" || stored === "ko" || stored === "en") return stored;
+  } catch {}
+  const nav = navigator.language.toLowerCase();
+  if (nav.startsWith("ja")) return "ja";
+  if (nav.startsWith("en")) return "en";
+  return "ko";
+}
+
+let currentLang: Language = detectInitialLang();
 const listeners: Set<() => void> = new Set();
 
 export function getLanguage(): Language {
@@ -407,6 +421,7 @@ export function getLanguage(): Language {
 export function setLanguage(lang: Language) {
   currentLang = lang;
   document.documentElement.lang = lang;
+  try { localStorage.setItem("taxgo-lang", lang); } catch {}
   listeners.forEach(l => l());
 }
 

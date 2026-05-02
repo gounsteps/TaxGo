@@ -26,7 +26,9 @@ export default function Home() {
   };
 
 
-  const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+  const origin = typeof window !== "undefined" ? window.location.origin : "https://taxgo.jp";
+  const baseUrl = origin;
+  const canonicalUrl = lang === "ko" ? `${origin}/` : `${origin}/?lang=${lang}`;
 
   const jsonLd = [
     {
@@ -85,11 +87,11 @@ export default function Home() {
         <meta name="keywords" content={t("seo.home.keywords")} />
         <meta name="author" content="TaxGo" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={baseUrl} />
-        <link rel="alternate" hrefLang="ko" href={`${baseUrl}/?lang=ko`} />
-        <link rel="alternate" hrefLang="ja" href={`${baseUrl}/?lang=ja`} />
-        <link rel="alternate" hrefLang="en" href={`${baseUrl}/?lang=en`} />
-        <link rel="alternate" hrefLang="x-default" href={baseUrl} />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="ko" href={`${origin}/`} />
+        <link rel="alternate" hrefLang="ja" href={`${origin}/?lang=ja`} />
+        <link rel="alternate" hrefLang="en" href={`${origin}/?lang=en`} />
+        <link rel="alternate" hrefLang="x-default" href={`${origin}/`} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="TaxGo" />
         <meta property="og:url" content={baseUrl} />
