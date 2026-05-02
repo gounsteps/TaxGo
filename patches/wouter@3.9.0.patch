@@ -1,0 +1,19 @@
+diff --git a/src/memory-location.js b/src/memory-location.js
+index 9fb0de35d79c45df1efc9884a8b99434aaf3ad26..95dd6ca02219d13f50ec4d00366d1bf59b801dab 100644
+--- a/src/memory-location.js
++++ b/src/memory-location.js
+@@ -43,12 +43,12 @@ export const memoryLocation = ({
+   };
+ 
+   const useMemoryLocation = () => [
+-    useSyncExternalStore(subscribe, () => currentPath),
++    useSyncExternalStore(subscribe, () => currentPath, () => currentPath),
+     navigate,
+   ];
+ 
+   const useMemoryQuery = () =>
+-    useSyncExternalStore(subscribe, () => currentSearch);
++    useSyncExternalStore(subscribe, () => currentSearch, () => currentSearch);
+ 
+   // Attach searchHook to the location hook for auto-inheritance in Router
+   useMemoryLocation.searchHook = useMemoryQuery;

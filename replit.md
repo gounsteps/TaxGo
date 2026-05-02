@@ -29,19 +29,29 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 ### nenkin-refund (TaxGo)
 - **Path**: `artifacts/nenkin-refund/`
 - **Preview path**: `/`
-- **Type**: react-vite (static, no backend)
+- **Type**: react-vite (static SPA + SSR prerender, no backend)
 - **Description**: Multilingual homepage for Japanese pension withdrawal (탈퇴일시금) and income tax refund agency service
 - **Languages**: Korean (default), Japanese, English
+- **GitHub Pages**: main branch `/docs` folder, custom domain taxgo.jp, Enforce HTTPS
 - **Key files**:
   - `src/lib/i18n.ts` — all translations (ko/ja/en)
   - `src/pages/home.tsx` — main one-page layout
   - `src/pages/faq.tsx` — FAQ separate page
+  - `src/entry-server.tsx` — SSR entry point for prerendering (React + wouter)
+  - `scripts/prerender.mjs` — prerender script (generates docs/index.html, docs/faq/index.html)
+  - `vite.config.ts` — client build with manualChunks splitting
+  - `vite.ssr.config.ts` — SSR build config (outputs to dist/server/)
   - `src/components/calculator.tsx` — 후생연금/국민연금 calculator
   - `src/components/layout/Navbar.tsx` — sticky nav with language switcher
   - `src/components/layout/Footer.tsx` — footer with contact info & blog links
   - `public/robots.txt`, `public/sitemap.xml` — SEO files
+- **Build commands**:
+  - Standard dev build: `BASE_PATH=/ pnpm --filter @workspace/nenkin-refund run build`
+  - Full prerender build: `BASE_PATH=/ pnpm --filter @workspace/nenkin-refund run build:all`
+  - Then copy to docs: `rm -rf docs && mkdir -p docs && cp -r artifacts/nenkin-refund/dist/public/. docs/`
+- **Bundle**: Split chunks — react-core (182KB), index (120KB), motion (117KB), radix-ui (103KB), faq (4KB, lazy)
+- **Patches**: `patches/wouter@3.9.0.patch` — adds getServerSnapshot to memory-location.js for SSR
 - **Contact**: KakaoTalk: j-tax, Email: nouzeidaikou@gmail.com, X: @nouzeidaikou
-- **Blog links**: Korean → https://blog.naver.com/nouzeidaikou, Japanese/English → 준비중
-- **Google Form**: Placeholder URL `https://forms.gle/PLACEHOLDER` — replace with real link
+- **Blog links**: Korean → https://blog.naver.com/nouzeidaikou, Japanese/English → https://note.com/texgo
 
 See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details.
